@@ -290,7 +290,11 @@ erpnext.work_order = {
 		if (doc.docstatus === 1) {
 			if (doc.status != 'Stopped' && doc.status != 'Completed') {
 				frm.add_custom_button(__('Stop'), function() {
+<<<<<<< HEAD
 					erpnext.work_order.stop_work_order(frm, "Stopped");
+=======
+					erpnext.wokr_order.stop_work_order(frm, "Stopped");
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 				}, __("Status"));
 			} else if (doc.status == 'Stopped') {
 				frm.add_custom_button(__('Re-open'), function() {

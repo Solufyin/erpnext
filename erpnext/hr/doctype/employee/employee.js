@@ -14,6 +14,20 @@ erpnext.hr.EmployeeController = frappe.ui.form.Controller.extend({
 			return { query: "erpnext.controllers.queries.employee_query"} }
 	},
 
+<<<<<<< HEAD
+=======
+	onload: function() {
+		this.frm.set_query("leave_approver", "leave_approvers", function(doc) {
+			return {
+				query:"erpnext.hr.doctype.employee_leave_approver.employee_leave_approver.get_approvers",
+				filters:{
+					user: doc.user_id
+				}
+			}
+		});
+	},
+
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	refresh: function() {
 		var me = this;
 		erpnext.toggle_naming_series();

@@ -77,6 +77,7 @@ class TestExpenseClaim(unittest.TestCase):
 		])
 
 		for gle in gl_entries:
+<<<<<<< HEAD
 			self.assertEquals(expected_values[gle.account][0], gle.account)
 			self.assertEquals(expected_values[gle.account][1], gle.debit)
 			self.assertEquals(expected_values[gle.account][2], gle.credit)
@@ -98,6 +99,11 @@ class TestExpenseClaim(unittest.TestCase):
 
 		gl_entry = frappe.get_all('GL Entry', {'voucher_type': 'Expense Claim', 'voucher_no': expense_claim.name})
 		self.assertEquals(len(gl_entry), 0)
+=======
+			self.assertEqual(expected_values[gle.account][0], gle.account)
+			self.assertEqual(expected_values[gle.account][1], gle.debit)
+			self.assertEqual(expected_values[gle.account][2], gle.credit)
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 def get_payable_account(company):
 	return frappe.db.get_value('Company', company, 'default_payable_account')
@@ -107,7 +113,10 @@ def make_expense_claim(payable_account,claim_amount, sanctioned_amount, company,
 		 "doctype": "Expense Claim",
 		 "employee": "_T-Employee-00001",
 		 "payable_account": payable_account,
+<<<<<<< HEAD
 		 "approval_status": "Approved",
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		 "company": company,
 		 "expenses":
 			[{ "expense_type": "Travel", "default_account": account, "claim_amount": claim_amount, "sanctioned_amount": sanctioned_amount }]
@@ -119,3 +128,8 @@ def make_expense_claim(payable_account,claim_amount, sanctioned_amount, company,
 
 	expense_claim.submit()
 	return expense_claim
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825

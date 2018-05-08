@@ -2,7 +2,10 @@ chart-of-accounts
 opening-accounts
 sales-invoice
 point-of-sale-pos-invoice
+<<<<<<< HEAD
 point-of-sales
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 purchase-invoice
 payments
 journal-entry

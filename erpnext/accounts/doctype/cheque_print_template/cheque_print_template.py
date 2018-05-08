@@ -29,11 +29,19 @@ def create_or_update_cheque_print_format(template_name):
 	cheque_print.html = """
 <div style="position: relative; top:%(starting_position_from_top_edge)scm">
 	<div style="width:%(cheque_width)scm;height:%(cheque_height)scm;">
+<<<<<<< HEAD
 		<span style="top:%(acc_pay_dist_from_top_edge)scm; left:%(acc_pay_dist_from_left_edge)scm;
 			border-bottom: solid 1px;border-top:solid 1px; position: absolute;">
 				%(message_to_show)s
 		</span>
 		<span style="top:%(date_dist_from_top_edge)scm; left:%(date_dist_from_left_edge)scm;
+=======
+		<span style="top: {{ %(acc_pay_dist_from_top_edge)s }}cm; left: {{ %(acc_pay_dist_from_left_edge)s }}cm;
+			border-bottom: solid 1px;border-top:solid 1px; position: absolute;">
+				%(message_to_show)s
+		</span>
+		<span style="top:%(date_dist_from_top_edge)s cm; left:%(date_dist_from_left_edge)scm;
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 			position: absolute;">
 			{{ frappe.utils.formatdate(doc.reference_date) or '' }}
 		</span>

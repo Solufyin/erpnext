@@ -65,6 +65,7 @@ def get_data():
 			]
 		},
 		{
+<<<<<<< HEAD
 			"label": _("Loan Management"),
 			"icon": "icon-list",
 			"items": [
@@ -85,6 +86,8 @@ def get_data():
 			]
 		},
 		{
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 			"label": _("Grant Application"),
 			"items": [
 				{

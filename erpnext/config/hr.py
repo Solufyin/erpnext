@@ -159,7 +159,11 @@ def get_data():
 			]
 		},
 		{
+<<<<<<< HEAD
 			"label": _("Loan Management"),
+=======
+			"label": _("Employee Loan Management"),
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 			"icon": "icon-list",
 			"items": [
 				{
@@ -169,12 +173,21 @@ def get_data():
 				},
 				{
 					"type": "doctype",
+<<<<<<< HEAD
 					"name": "Loan Application",
 					"description": _("Loan Application")
 				},
 				{
 					"type": "doctype",
 					"name": "Loan"
+=======
+					"name": "Employee Loan Application",
+					"description": _("Employee Loan Application")
+				},
+				{
+					"type": "doctype",
+					"name": "Employee Loan"
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 				},
 			]
 		},

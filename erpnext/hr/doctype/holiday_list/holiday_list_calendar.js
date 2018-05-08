@@ -3,8 +3,13 @@
 
 frappe.views.calendar["Holiday List"] = {
 	field_map: {
+<<<<<<< HEAD
 		"start": "from_date",
 		"end": "to_date",
+=======
+		"start": "holiday_date",
+		"end": "holiday_date",
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		"id": "name",
 		"title": "description",
 		"allDay": "allDay"

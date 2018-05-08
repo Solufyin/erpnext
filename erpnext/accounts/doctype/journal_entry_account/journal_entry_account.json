@@ -618,7 +618,11 @@
    "label": "Reference Type", 
    "length": 0, 
    "no_copy": 0, 
+<<<<<<< HEAD
    "options": "\nSales Invoice\nPurchase Invoice\nJournal Entry\nSales Order\nPurchase Order\nExpense Claim\nAsset\nLoan\nPayroll Entry\nEmployee Advance", 
+=======
+   "options": "\nSales Invoice\nPurchase Invoice\nJournal Entry\nSales Order\nPurchase Order\nExpense Claim\nAsset\nEmployee Loan\nPayroll Entry\nEmployee Advance", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 

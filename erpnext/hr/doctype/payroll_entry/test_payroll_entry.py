@@ -29,6 +29,7 @@ class TestPayrollEntry(unittest.TestCase):
 		self.assertEqual(get_end_date('2017-02-15', 'monthly'), {'end_date': '2017-03-14'})
 		self.assertEqual(get_end_date('2017-02-15', 'daily'), {'end_date': '2017-02-15'})
 
+<<<<<<< HEAD
 	def test_loan(self):
 		from erpnext.hr.doctype.salary_structure.test_salary_structure import (make_employee,
 			make_salary_structure)
@@ -36,6 +37,15 @@ class TestPayrollEntry(unittest.TestCase):
 
 		branch = "Test Employee Branch"
 		applicant = make_employee("test_employee@loan.com")
+=======
+	def test_employee_loan(self):
+		from erpnext.hr.doctype.salary_structure.test_salary_structure import (make_employee,
+			make_salary_structure)
+		from erpnext.hr.doctype.employee_loan.test_employee_loan import create_employee_loan
+
+		branch = "Test Employee Branch"
+		employee = make_employee("test_employee@loan.com")
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		company = erpnext.get_default_company()
 		holiday_list = make_holiday("test holiday for loan")
 
@@ -57,7 +67,11 @@ class TestPayrollEntry(unittest.TestCase):
 			salary_component = frappe.get_doc('Salary Component', 'Basic Salary')
 			salary_component.append('accounts', {
 				'company': company,
+<<<<<<< HEAD
 				'default_account': "Salary - " + frappe.db.get_value('Company', company, 'abbr')
+=======
+				'default_account': 'Salary - WP'
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 			})
 
 		company_doc = frappe.get_doc('Company', company)
@@ -72,20 +86,35 @@ class TestPayrollEntry(unittest.TestCase):
 				'branch': branch
 			}).insert()
 
+<<<<<<< HEAD
 		employee_doc = frappe.get_doc('Employee', applicant)
+=======
+		employee_doc = frappe.get_doc('Employee', employee)
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		employee_doc.branch = branch
 		employee_doc.holiday_list = holiday_list
 		employee_doc.save()
 
+<<<<<<< HEAD
 		loan = create_loan(applicant,
 			"Personal Loan", 280000, "Repay Over Number of Periods", 20)
 		loan.repay_from_salary = 1
 		loan.submit()
+=======
+		employee_loan = create_employee_loan(employee,
+			"Personal Loan", 280000, "Repay Over Number of Periods", 20)
+		employee_loan.repay_from_salary = 1
+		employee_loan.submit()
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 		salary_strcture = "Test Salary Structure for Loan"
 		if not frappe.db.exists('Salary Structure', salary_strcture):
 			salary_strcture = make_salary_structure(salary_strcture, [{
+<<<<<<< HEAD
 				'employee': applicant,
+=======
+				'employee': employee,
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 				'from_date': '2017-01-01',
 				'base': 30000
 			}])
@@ -104,6 +133,7 @@ class TestPayrollEntry(unittest.TestCase):
 			end_date=dates.end_date, branch=branch)
 
 		name = frappe.db.get_value('Salary Slip',
+<<<<<<< HEAD
 			{'posting_date': nowdate(), 'employee': applicant}, 'name')
 
 		salary_slip = frappe.get_doc('Salary Slip', name)
@@ -111,6 +141,15 @@ class TestPayrollEntry(unittest.TestCase):
 			if row.loan == loan.name:
 				interest_amount = (280000 * 8.4)/(12*100)
 				principal_amount = loan.monthly_repayment_amount - interest_amount
+=======
+			{'posting_date': nowdate(), 'employee': employee}, 'name')
+
+		salary_slip = frappe.get_doc('Salary Slip', name)
+		for row in salary_slip.loans:
+			if row.employee_loan == employee_loan.name:
+				interest_amount = (280000 * 8.4)/(12*100)
+				principal_amount = employee_loan.monthly_repayment_amount - interest_amount
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 				self.assertEqual(row.interest_amount, interest_amount)
 				self.assertEqual(row.principal_amount, principal_amount)
 				self.assertEqual(row.total_payment,
@@ -119,8 +158,13 @@ class TestPayrollEntry(unittest.TestCase):
 		if salary_slip.docstatus == 0:
 			frappe.delete_doc('Salary Slip', name)
 
+<<<<<<< HEAD
 		loan.cancel()
 		frappe.delete_doc('Loan', loan.name)
+=======
+		employee_loan.cancel()
+		frappe.delete_doc('Employee Loan', employee_loan.name)
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 def get_salary_component_account(sal_comp):
 	company = erpnext.get_default_company()

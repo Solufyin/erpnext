@@ -507,7 +507,11 @@ class PaymentEntry(AccountsController):
 					doc = frappe.get_doc("Expense Claim", d.reference_name)
 					update_reimbursed_amount(doc)
 
+<<<<<<< HEAD
 	def on_recurring(self, reference_doc, auto_repeat_doc):
+=======
+	def on_recurring(self, reference_doc, subscription_doc):
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		self.reference_no = reference_doc.name
 		self.reference_date = nowdate()
 

@@ -10,7 +10,11 @@ To create new Authorization Rule, go to:
 
 Let's consider an example of Authorization Rule to learn better.
 
+<<<<<<< HEAD
 Assume that Sales Manager needs to authorize Sales Orders, only if its Grand Total value exceeds 10000. If Sales Order values is less than 10000, then even Sales User will be able to submit it. It means Submit permision of Sales User will be restricted only upto Sales Order of Grand Total less than 10000.
+=======
+Assume that Sales Manager needs to authorize Sales Orders, only if its Grand Total value exceeds 10000. If Sales Orer values is less than 10000, then even Sales User will be able to submit it. It means Submit permision of Sales User will be restricted only upto Sales Order of Grand Total less than 10000.
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 **Step 1:**
 

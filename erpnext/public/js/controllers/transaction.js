@@ -1102,6 +1102,24 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 		});
 	},
 
+<<<<<<< HEAD
+=======
+	apply_coupon_price_list: function() {
+		var me = this;
+		if (me.frm.doc.coupon){
+			return this.frm.call({
+				method: "erpnext.accounts.doctype.coupon.coupon.apply_coupon_price_list",
+				args: {	coupon: me.frm.doc.coupon },
+				callback: function(r) {
+					if(r){
+						me.frm.set_value("selling_price_list", r.message);
+					}
+				}
+			});
+		}
+	},
+
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	validate_company_and_party: function() {
 		var me = this;
 		var valid = true;

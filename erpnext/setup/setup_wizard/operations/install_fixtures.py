@@ -265,11 +265,19 @@ def install(country=None):
 	base_path = frappe.get_app_path("erpnext", "hr", "doctype")
 	response = frappe.read_file(os.path.join(base_path, "leave_application/leave_application_email_template.html"))
 
+<<<<<<< HEAD
 	records += [{'doctype': 'Email Template', 'name': _("Leave Approval Notification"), 'response': response,\
 		'subject': _("Leave Approval Notification"), 'owner': frappe.session.user}]
 
 	records += [{'doctype': 'Email Template', 'name': _("Leave Status Notification"), 'response': response,\
 		'subject': _("Leave Status Notification"), 'owner': frappe.session.user}]
+=======
+	records += {'doctype': 'Email Template', 'name': _("Leave Approval Notification"), 'response': response,\
+		'subject': _("Leave Approval Notification"), 'owner': frappe.session.user}
+
+	records += {'doctype': 'Email Template', 'name': _("Leave Status Notification"), 'response': response,\
+		'subject': _("Leave Status Notification"), 'owner': frappe.session.user}
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 	# Records for the Supplier Scorecard
 	from erpnext.buying.doctype.supplier_scorecard.supplier_scorecard import make_default_records

@@ -110,6 +110,7 @@ frappe.ui.form.on("Leave Application", {
 
 	calculate_total_days: function(frm) {
 		if(frm.doc.from_date && frm.doc.to_date && frm.doc.employee && frm.doc.leave_type) {
+<<<<<<< HEAD
 
 			var from_date = Date.parse(frm.doc.from_date);
 			var to_date = Date.parse(frm.doc.to_date);
@@ -119,6 +120,8 @@ frappe.ui.form.on("Leave Application", {
 				frm.set_value('to_date', '');
 				return;
 			}
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 				// server call is done to include holidays in leave days calculations
 			return frappe.call({
 				method: 'erpnext.hr.doctype.leave_application.leave_application.get_number_of_leave_days',

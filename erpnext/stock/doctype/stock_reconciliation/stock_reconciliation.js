@@ -23,10 +23,13 @@ frappe.ui.form.on("Stock Reconciliation", {
 				return erpnext.queries.warehouse(frm.doc);
 			});
 		}
+<<<<<<< HEAD
 
 		if (!frm.doc.expense_account) {
 			frm.trigger("set_expense_account");
 		}
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	},
 
 	refresh: function(frm) {
@@ -118,6 +121,7 @@ frappe.ui.form.on("Stock Reconciliation", {
 	toggle_display_account_head: function(frm) {
 		frm.toggle_display(['expense_account', 'cost_center'],
 			erpnext.is_perpetual_inventory_enabled(frm.doc.company));
+<<<<<<< HEAD
 	},
 	purpose: function(frm) {
 		frm.trigger("set_expense_account");
@@ -137,6 +141,8 @@ frappe.ui.form.on("Stock Reconciliation", {
 				}
 			});
 		}
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	}
 });
 
@@ -160,12 +166,43 @@ frappe.ui.form.on("Stock Reconciliation Item", {
 });
 
 erpnext.stock.StockReconciliation = erpnext.stock.StockController.extend({
+<<<<<<< HEAD
+=======
+	onload: function() {
+		this.set_default_expense_account();
+	},
+
+	set_default_expense_account: function() {
+		var me = this;
+		if(this.frm.doc.company) {
+			if (erpnext.is_perpetual_inventory_enabled(this.frm.doc.company) && !this.frm.doc.expense_account) {
+				return this.frm.call({
+					method: "erpnext.accounts.utils.get_company_default",
+					args: {
+						"fieldname": "stock_adjustment_account",
+						"company": this.frm.doc.company
+					},
+					callback: function(r) {
+						if (!r.exc) {
+							me.frm.set_value("expense_account", r.message);
+						}
+					}
+				});
+			}
+		}
+	},
+
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	setup: function() {
 		var me = this;
 
 		this.setup_posting_date_time_check();
 
 		if (me.frm.doc.company && erpnext.is_perpetual_inventory_enabled(me.frm.doc.company)) {
+<<<<<<< HEAD
+=======
+			this.frm.add_fetch("company", "stock_adjustment_account", "expense_account");
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 			this.frm.add_fetch("company", "cost_center", "cost_center");
 		}
 		this.frm.fields_dict["expense_account"].get_query = function() {

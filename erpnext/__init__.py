@@ -5,7 +5,11 @@ import frappe
 from erpnext.hooks import regional_overrides
 from frappe.utils import getdate
 
+<<<<<<< HEAD
 __version__ = '10.1.27'
+=======
+__version__ = '10.1.23'
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 def get_default_company(user=None):
 	'''Get default company for user'''

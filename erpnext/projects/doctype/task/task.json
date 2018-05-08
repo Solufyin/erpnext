@@ -40,7 +40,10 @@
    "reqd": 1, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -73,7 +76,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -105,7 +111,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -136,7 +145,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0, 
    "width": "50%"
   }, 
@@ -170,7 +182,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -203,7 +218,10 @@
    "reqd": 0, 
    "search_index": 1, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -235,7 +253,10 @@
    "reqd": 0, 
    "search_index": 1, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -267,7 +288,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -300,7 +324,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -335,7 +362,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -367,7 +397,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -397,7 +430,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -430,7 +466,10 @@
    "reqd": 0, 
    "search_index": 1, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -462,7 +501,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -494,6 +536,7 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
    "unique": 0
   }, 
@@ -526,6 +569,8 @@
    "search_index": 0, 
    "set_only_once": 0, 
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -558,7 +603,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -592,7 +640,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0, 
    "width": "300px"
   }, 
@@ -626,7 +677,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -659,7 +713,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -691,7 +748,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -726,7 +786,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0, 
    "width": "50%"
   }, 
@@ -760,7 +823,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -795,7 +861,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -825,7 +894,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -858,7 +930,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -889,7 +964,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -923,7 +1001,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -956,7 +1037,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -986,7 +1070,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1018,7 +1105,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1048,7 +1138,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1081,7 +1174,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1114,7 +1210,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1143,7 +1242,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1174,7 +1276,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1205,7 +1310,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1236,7 +1344,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1267,7 +1378,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }
  ], 
@@ -1283,7 +1397,11 @@
  "istable": 0, 
  "max_attachments": 5, 
  "menu_index": 0, 
+<<<<<<< HEAD
  "modified": "2018-04-30 12:48:52.743838", 
+=======
+ "modified": "2017-11-10 18:37:19.660293", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
  "modified_by": "Administrator", 
  "module": "Projects", 
  "name": "Task", 
@@ -1291,6 +1409,10 @@
  "permissions": [
   {
    "amend": 0, 
+<<<<<<< HEAD
+=======
+   "apply_user_permissions": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "cancel": 0, 
    "create": 1, 
    "delete": 1, 

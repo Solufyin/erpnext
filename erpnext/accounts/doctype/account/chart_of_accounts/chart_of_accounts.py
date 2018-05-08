@@ -165,7 +165,11 @@ def build_account_tree(tree, parent, all_accounts):
 		tree[child.account_name] = {}
 		
 		# assign account_type and root_type
+<<<<<<< HEAD
 		if child.account_number:
+=======
+		if child.account_type:
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 			tree[child.account_name]["account_number"] = child.account_number
 		if child.account_type:
 			tree[child.account_name]["account_type"] = child.account_type
@@ -193,4 +197,8 @@ def validate_bank_account(coa, bank_account):
 
 		_get_account_names(chart)
 
+<<<<<<< HEAD
 	return (bank_account in accounts)
+=======
+	return (bank_account in accounts)
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825

@@ -15,6 +15,7 @@ frappe.ui.form.on('Student', {
 				}
 			};
 		})
+<<<<<<< HEAD
 	},
 	refresh: function(frm) {
 		if(!frm.is_new()) {
@@ -27,3 +28,7 @@ frappe.ui.form.on('Student', {
 		}
 	}
 });
+=======
+	}
+});
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825

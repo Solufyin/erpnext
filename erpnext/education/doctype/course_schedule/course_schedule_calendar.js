@@ -8,7 +8,11 @@ frappe.views.calendar["Course Schedule"] = {
 		"allDay": "allDay"
 	},
 	gantt: false,
+<<<<<<< HEAD
 	order_by: "schedule_date",
+=======
+	order_by: "from_time",
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	filters: [
 		{
 			"fieldtype": "Link",

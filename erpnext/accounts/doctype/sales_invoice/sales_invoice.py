@@ -110,7 +110,11 @@ class SalesInvoice(SellingController):
 	def on_submit(self):
 		self.validate_pos_paid_amount()
 
+<<<<<<< HEAD
 		if not self.auto_repeat:
+=======
+		if not self.subscription:
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 			frappe.get_doc('Authorization Control').validate_approving_authority(self.doctype,
 				self.company, self.base_grand_total, self)
 
@@ -828,7 +832,11 @@ class SalesInvoice(SellingController):
 		for dn in set(updated_delivery_notes):
 			frappe.get_doc("Delivery Note", dn).update_billing_percentage(update_modified=update_modified)
 
+<<<<<<< HEAD
 	def on_recurring(self, reference_doc, auto_repeat_doc):
+=======
+	def on_recurring(self, reference_doc, subscription_doc):
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		for fieldname in ("c_form_applicable", "c_form_no", "write_off_amount"):
 			self.set(fieldname, reference_doc.get(fieldname))
 

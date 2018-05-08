@@ -49,6 +49,28 @@ def get_cart_quotation(doc=None):
 	}
 
 @frappe.whitelist()
+<<<<<<< HEAD
+=======
+def apply_coupon_code(applied_code):
+	quotation = True
+	if applied_code:
+		coupon_price_list = frappe.db.sql("select name, coupon_price_list "
+			"from `tabCoupon` where coupon_code=%s limit 1", applied_code,
+		                                  as_dict=1)
+		if coupon_price_list:
+			pricelist_doc = frappe.get_doc("Price List", coupon_price_list[0].coupon_price_list)
+			quotation = _get_cart_quotation()
+			frappe.set_value("Quotation", quotation.name, "coupon",
+					coupon_price_list[0].name)
+			frappe.set_value("Quotation", quotation.name,"selling_price_list", pricelist_doc.name)
+		else:
+			frappe.throw(_("Please enter valid coupon code !!"))
+	else:
+		frappe.throw(_("Please enter coupon code !!"))
+	return quotation
+
+@frappe.whitelist()
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 def place_order():
 	quotation = _get_cart_quotation()
 	quotation.company = frappe.db.get_value("Shopping Cart Settings", None, "company")
@@ -110,6 +132,10 @@ def update_cart(item_code, qty, with_items=False):
 
 	quotation.flags.ignore_permissions = True
 	quotation.payment_schedule = []
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	if not empty_card:
 		quotation.save()
 	else:

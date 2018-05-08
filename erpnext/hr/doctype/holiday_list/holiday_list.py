@@ -78,7 +78,13 @@ def get_events(start, end, filters=None):
 		filters.append(['Holiday', 'holiday_date', '>', getdate(start)])
 	if end:
 		filters.append(['Holiday', 'holiday_date', '<', getdate(end)])
+<<<<<<< HEAD
 	return frappe.get_list('Holiday List',
 		fields=['name', '`tabHoliday`.holiday_date', '`tabHoliday`.description', '`tabHoliday List`.color'],
+=======
+
+	return frappe.get_list('Holiday List',
+		fields=['name', '`tabHoliday`.holiday_date', '`tabHoliday`.description'],
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		filters = filters,
 		update={"allDay": 1})

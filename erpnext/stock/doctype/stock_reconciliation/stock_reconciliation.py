@@ -8,7 +8,10 @@ from frappe import msgprint, _
 from frappe.utils import cstr, flt, cint
 from erpnext.stock.stock_ledger import update_entries_after
 from erpnext.controllers.stock_controller import StockController
+<<<<<<< HEAD
 from erpnext.accounts.utils import get_company_default
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 from erpnext.stock.utils import get_stock_balance
 
 class OpeningEntryAccountError(frappe.ValidationError): pass
@@ -305,6 +308,7 @@ def get_stock_balance_for(item_code, warehouse, posting_date, posting_time):
 		'qty': qty,
 		'rate': rate
 	}
+<<<<<<< HEAD
 
 @frappe.whitelist()
 def get_difference_account(purpose, company):
@@ -315,3 +319,5 @@ def get_difference_account(purpose, company):
 			'company': company, 'account_type': 'Temporary'}, 'name')
 
 	return account
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825

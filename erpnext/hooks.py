@@ -216,8 +216,13 @@ doc_events = {
 
 scheduler_events = {
 	"hourly": [
+<<<<<<< HEAD
 		'erpnext.hr.doctype.daily_work_summary_group.daily_work_summary_group.trigger_emails',
 		"erpnext.accounts.doctype.subscription.subscription.process_all"
+=======
+		"erpnext.accounts.doctype.subscription.subscription.make_subscription_entry",
+		'erpnext.hr.doctype.daily_work_summary_group.daily_work_summary_group.trigger_emails'
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	],
 	"daily": [
 		"erpnext.stock.reorder_item.reorder_item",

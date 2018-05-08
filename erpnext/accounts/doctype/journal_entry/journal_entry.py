@@ -9,7 +9,11 @@ from erpnext.controllers.accounts_controller import AccountsController
 from erpnext.accounts.utils import get_balance_on, get_account_currency
 from erpnext.accounts.party import get_party_account
 from erpnext.hr.doctype.expense_claim.expense_claim import update_reimbursed_amount
+<<<<<<< HEAD
 from erpnext.hr.doctype.loan.loan import update_disbursement_status, update_total_amount_paid
+=======
+from erpnext.hr.doctype.employee_loan.employee_loan import update_disbursement_status
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 from six import string_types, iteritems
 
@@ -46,9 +50,15 @@ class JournalEntry(AccountsController):
 	def on_submit(self):
 		self.check_credit_limit()
 		self.make_gl_entries()
+<<<<<<< HEAD
 		self.update_loan()
 		self.update_advance_paid()
 		self.update_expense_claim()
+=======
+		self.update_advance_paid()
+		self.update_expense_claim()
+		self.update_employee_loan()
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 	def get_title(self):
 		return self.pay_to_recd_from or self.accounts[0].account
@@ -72,7 +82,11 @@ class JournalEntry(AccountsController):
 		self.make_gl_entries(1)
 		self.update_advance_paid()
 		self.update_expense_claim()
+<<<<<<< HEAD
 		self.update_loan()
+=======
+		self.update_employee_loan()
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		self.unlink_advance_entry_reference()
 		self.unlink_asset_reference()
 
@@ -518,6 +532,7 @@ class JournalEntry(AccountsController):
 				doc = frappe.get_doc("Expense Claim", d.reference_name)
 				update_reimbursed_amount(doc)
 
+<<<<<<< HEAD
 	def update_loan(self):
 		if self.paid_loan:
 			paid_loan = json.loads(self.paid_loan)
@@ -529,6 +544,13 @@ class JournalEntry(AccountsController):
 				doc = frappe.get_doc("Loan", d.reference_name)
 				update_disbursement_status(doc)
 				update_total_amount_paid(doc)
+=======
+	def update_employee_loan(self):
+		for d in self.accounts:
+			if d.reference_type=="Employee Loan" and flt(d.debit) > 0:
+				doc = frappe.get_doc("Employee Loan", d.reference_name)
+				update_disbursement_status(doc)
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 	def validate_expense_claim(self):
 		for d in self.accounts:

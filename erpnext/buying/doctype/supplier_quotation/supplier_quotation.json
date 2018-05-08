@@ -40,7 +40,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -72,7 +75,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -105,7 +111,10 @@
    "reqd": 1, 
    "search_index": 0, 
    "set_only_once": 1, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -139,7 +148,10 @@
    "reqd": 1, 
    "search_index": 1, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -170,7 +182,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -201,7 +216,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0, 
    "width": "50%"
   }, 
@@ -235,7 +253,10 @@
    "reqd": 1, 
    "search_index": 1, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -268,7 +289,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -302,7 +326,10 @@
    "reqd": 1, 
    "search_index": 1, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -333,7 +360,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -364,7 +394,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -395,7 +428,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -425,7 +461,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -455,7 +494,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -485,7 +527,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -516,7 +561,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -547,7 +595,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -580,7 +631,10 @@
    "reqd": 1, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -614,7 +668,10 @@
    "reqd": 1, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -644,7 +701,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0, 
    "width": "50%"
   }, 
@@ -676,7 +736,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -708,7 +771,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -740,7 +806,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -770,7 +839,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -802,7 +874,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -835,7 +910,10 @@
    "reqd": 1, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -867,7 +945,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -896,7 +977,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -928,7 +1012,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -961,7 +1048,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -990,7 +1080,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1022,7 +1115,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1055,7 +1151,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1086,7 +1185,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1118,7 +1220,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1152,7 +1257,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1182,7 +1290,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1214,7 +1325,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1244,7 +1358,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1277,7 +1394,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1308,7 +1428,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1339,7 +1462,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1371,7 +1497,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1404,7 +1533,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1437,7 +1569,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1470,7 +1605,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1500,7 +1638,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1533,7 +1674,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1566,7 +1710,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1598,7 +1745,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1630,7 +1780,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1663,7 +1816,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1695,7 +1851,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1725,7 +1884,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1756,7 +1918,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1788,7 +1953,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1818,7 +1986,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1851,7 +2022,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1883,7 +2057,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1916,7 +2093,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1949,7 +2129,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -1979,7 +2162,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2012,7 +2198,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2044,7 +2233,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2076,7 +2268,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2109,7 +2304,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2142,7 +2340,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2174,7 +2375,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2205,7 +2409,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2238,7 +2445,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2271,7 +2481,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2302,7 +2515,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2320,7 +2536,11 @@
    "in_global_search": 0, 
    "in_list_view": 0, 
    "in_standard_filter": 0, 
+<<<<<<< HEAD
    "label": "Auto Repeat Section", 
+=======
+   "label": "Subscription Section", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "length": 0, 
    "no_copy": 0, 
    "permlevel": 0, 
@@ -2333,7 +2553,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2342,7 +2565,11 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "fieldname": "auto_repeat", 
+=======
+   "fieldname": "subscription", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "fieldtype": "Link", 
    "hidden": 0, 
    "ignore_user_permissions": 0, 
@@ -2351,10 +2578,17 @@
    "in_global_search": 0, 
    "in_list_view": 0, 
    "in_standard_filter": 0, 
+<<<<<<< HEAD
    "label": "Auto Repeat", 
    "length": 0, 
    "no_copy": 1, 
    "options": "Auto Repeat", 
+=======
+   "label": "Subscription", 
+   "length": 0, 
+   "no_copy": 1, 
+   "options": "Subscription", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 1, 
@@ -2365,7 +2599,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2397,7 +2634,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2430,7 +2670,10 @@
    "reqd": 1, 
    "search_index": 1, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2459,7 +2702,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2491,7 +2737,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2522,7 +2771,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -2554,7 +2806,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }
  ], 
@@ -2570,7 +2825,11 @@
  "istable": 0, 
  "max_attachments": 0, 
  "menu_index": 0, 
+<<<<<<< HEAD
  "modified": "2018-03-10 07:37:33.662363", 
+=======
+ "modified": "2017-11-29 14:07:56.698355", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
  "modified_by": "Administrator", 
  "module": "Buying", 
  "name": "Supplier Quotation", 

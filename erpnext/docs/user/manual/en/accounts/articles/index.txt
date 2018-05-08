@@ -14,7 +14,11 @@ withdrawing-salary-from-owners-equity-account
 adjust-withhold-amount-payment-entry
 common-receivable-account.md
 types-in-tax-template
+<<<<<<< HEAD
 freeze-account
 round-off-account-validation
 exchange-rate-field-frozen
 bulk-payment-entry
+=======
+freeze-account
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825

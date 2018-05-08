@@ -32,7 +32,11 @@ frappe.query_reports["Accounts Payable"] = {
 			"fieldname":"ageing_based_on",
 			"label": __("Ageing Based On"),
 			"fieldtype": "Select",
+<<<<<<< HEAD
 			"options": 'Posting Date\nDue Date\nSupplier Invoice Date',
+=======
+			"options": 'Posting Date\nDue Date',
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 			"default": "Posting Date"
 		},
 		{

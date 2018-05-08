@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ERPNext for Manufacturers
 
 ERPNext comes batteries included for all requirements of a manufacturing business like Bill of Materials tracking, Production Order planning and execution, procurement and lot more.
@@ -28,5 +29,15 @@ Check the following video to educate yourself on each feature in the manufacturi
 </div>
 
 ### User Manual
+=======
+# Manufacturing
+
+The Manufacturing module in ERPNext helps you to maintain multi-level Bill of
+Materials (BOMs) for your Items. 
+It helps in product costing, production planning, creating work orders for your manufacturing shop floors and 
+planning inventory by getting your material requirement via BOMs (also called Material Requirements Planning MRP).
+
+### Topics
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 {index}

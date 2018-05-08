@@ -17,5 +17,9 @@ holiday-list
 human-resource-setup
 daily-work-summary
 fleet-management
+<<<<<<< HEAD
 loan-management
+=======
+employee-loan-management
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 articles

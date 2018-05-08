@@ -9,6 +9,11 @@ from frappe.utils import cint, cstr, date_diff, flt, formatdate, getdate, get_li
 from erpnext.hr.utils import set_employee_name
 from erpnext.hr.doctype.leave_block_list.leave_block_list import get_applicable_block_dates
 from erpnext.hr.doctype.employee.employee import get_holiday_list_for_employee
+<<<<<<< HEAD
+=======
+from erpnext.hr.doctype.employee_leave_approver.employee_leave_approver import get_approver_list
+
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 class LeaveDayBlockedError(frappe.ValidationError): pass
 class OverlapError(frappe.ValidationError): pass
@@ -232,6 +237,7 @@ class LeaveApplication(Document):
 		})
 
 	def notify_leave_approver(self):
+<<<<<<< HEAD
 		if self.leave_approver:
 			parent_doc = frappe.get_doc('Leave Application', self.name)
 			args = parent_doc.as_dict()
@@ -250,6 +256,26 @@ class LeaveApplication(Document):
 				# for email
 				"subject": email_template.subject
 			})
+=======
+
+		parent_doc = frappe.get_doc('Leave Application', self.name)
+		args = parent_doc.as_dict()
+
+		template = frappe.db.get_single_value('HR Settings', 'leave_approval_notification_template')
+		if not template:
+			frappe.msgprint(_("Please set default template for Leave Approval Notification in HR Settings."))
+			return
+		email_template = frappe.get_doc("Email Template", template)
+		message = frappe.render_template(email_template.response, args)
+
+		self.notify({
+			# for post in messages
+			"message": message,
+			"message_to": self.leave_approver,
+			# for email
+			"subject": email_template.subject
+		})
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 	def notify(self, args):
 		args = frappe._dict(args)
@@ -382,6 +408,10 @@ def get_events(start, end, filters=None):
 
 	from frappe.desk.reportview import get_filters_cond
 	conditions = get_filters_cond("Leave Application", filters, [])
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	# show department leaves for employee
 	if "Employee" in frappe.get_roles():
 		add_department_leaves(events, start, end, employee, company)
@@ -407,7 +437,11 @@ def add_department_leaves(events, start, end, employee, company):
 	add_leaves(events, start, end, match_conditions=match_conditions)
 
 def add_leaves(events, start, end, match_conditions=None):
+<<<<<<< HEAD
 	query = """select name, from_date, to_date, employee_name, color, half_day,
+=======
+	query = """select name, from_date, to_date, employee_name, half_day,
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		employee, docstatus
 		from `tabLeave Application` where
 		from_date <= %(end)s and to_date >= %(start)s <= to_date
@@ -421,10 +455,16 @@ def add_leaves(events, start, end, match_conditions=None):
 			"doctype": "Leave Application",
 			"from_date": d.from_date,
 			"to_date": d.to_date,
+<<<<<<< HEAD
 			"docstatus": d.docstatus,
 			"color": d.color,
 			"title": cstr(d.employee_name) + \
 				(d.half_day and _(" (Half Day)") or ""),
+=======
+			"title": cstr(d.employee_name) + \
+				(d.half_day and _(" (Half Day)") or ""),
+			"docstatus": d.docstatus
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		}
 		if e not in events:
 			events.append(e)

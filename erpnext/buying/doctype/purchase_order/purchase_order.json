@@ -3522,7 +3522,11 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "fieldname": "auto_repeat", 
+=======
+   "fieldname": "subscription", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "fieldtype": "Link", 
    "hidden": 0, 
    "ignore_user_permissions": 0, 
@@ -3531,10 +3535,17 @@
    "in_global_search": 0, 
    "in_list_view": 0, 
    "in_standard_filter": 0, 
+<<<<<<< HEAD
    "label": "Auto Repeat", 
    "length": 0, 
    "no_copy": 1, 
    "options": "Auto Repeat", 
+=======
+   "label": "Subscription", 
+   "length": 0, 
+   "no_copy": 1, 
+   "options": "Subscription", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 1, 
@@ -3560,8 +3571,13 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
+<<<<<<< HEAD
  "modified": "2018-03-30 14:09:02.393746",
  "modified_by": "Administrator",
+=======
+ "modified": "2018-03-28 14:09:02.393746", 
+ "modified_by": "Administrator", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
  "module": "Buying", 
  "name": "Purchase Order", 
  "owner": "Administrator", 

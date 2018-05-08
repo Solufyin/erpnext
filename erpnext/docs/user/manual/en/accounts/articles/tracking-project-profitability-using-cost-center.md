@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 #Tracking Project Profitability using Cost Center
+=======
+#Tracking Project Profibitability using Cost Center
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 To track expenses and profibility for a project, you can use Cost Centers. You should create separate Cost Center for each Project. This will allow you to.
 
@@ -77,4 +81,8 @@ To check Budget Variance report, go to:
 
 [Click here to learn how to do budgeting from Cost Center](/docs/user/manual/en/accounts/budgeting.html).
 
+<<<<<<< HEAD
 <!-- markdown -->
+=======
+<!-- markdown -->
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825

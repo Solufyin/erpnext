@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- add-breadcrumbs -->
 # ERPNext for Education
 
@@ -43,5 +44,13 @@ Education Institute needs lots more than Education module, and ERPNext has all o
 - Organize your [purchases](/docs/user/manual/en/buying.html) and place an approval system.
 
 Here is the stepwise guide on each functionality of ERPNext Education module.
+=======
+# Education
+
+
+The Education Domain in ERPNext is designed to meet requirements of any educational Institute whether that is a school, college or any other private firm. ERPNext provides a centralized system, which can be used to maintain and update all the activities related to an Institution. It will provide a complete package for every funcationality required in any institute like Online Admission, Fees, Attendance, Examination.
+
+<img class="screenshot" alt="Fees Section" src="{{docs_base_url}}/assets/img/education/module.png">
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 {index}

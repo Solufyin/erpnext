@@ -23,12 +23,15 @@ frappe.ui.form.on("Journal Entry", {
 			}, "fa fa-table");
 		}
 
+<<<<<<< HEAD
 		if(frm.doc.docstatus==1 && frm.doc.naming_series=="JV-") {
 			frm.add_custom_button(__('Reverse Journal Entry'), function() {
 				return erpnext.journal_entry.reverse_journal_entry(frm);
 			});
 		}
 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		if (frm.doc.__islocal) {
 			frm.add_custom_button(__('Quick Entry'), function() {
 				return erpnext.journal_entry.quick_entry(frm);
@@ -559,6 +562,7 @@ $.extend(erpnext.journal_entry, {
 			});
 		}
 		return { filters: filters };
+<<<<<<< HEAD
 	},
 
 	reverse_journal_entry: function(frm) {
@@ -574,5 +578,7 @@ $.extend(erpnext.journal_entry, {
 		}
 		frm.copy_doc();
 		cur_frm.reload_doc();
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	}
 });

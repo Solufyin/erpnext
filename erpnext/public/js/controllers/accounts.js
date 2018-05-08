@@ -145,8 +145,11 @@ cur_frm.cscript.account_head = function(doc, cdt, cdn) {
 				frappe.model.set_value(cdt, cdn, "description", r.message.account_name);
 			}
 		})
+<<<<<<< HEAD
 	} else if (d.charge_type == 'Actual' && d.account_head) {
 		frappe.model.set_value(cdt, cdn, "description", d.account_head.split(' - ')[0]);
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	}
 }
 

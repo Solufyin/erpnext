@@ -1,14 +1,22 @@
 
 frappe.views.calendar["Patient Appointment"] = {
 	field_map: {
+<<<<<<< HEAD
 		"start": "appointment_date",
 		"end": "appointment_datetime",
+=======
+		"start": "start",
+		"end": "end",
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		"id": "name",
 		"title": "patient",
 		"allDay": "allDay",
 		"eventColor": "color"
 	},
+<<<<<<< HEAD
 	order_by: "appointment_date",
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	gantt: true,
 	get_events_method: "erpnext.healthcare.doctype.patient_appointment.patient_appointment.get_events",
 	filters: [

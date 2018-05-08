@@ -49,6 +49,12 @@ class TestLeaveApplication(unittest.TestCase):
 	def tearDown(self):
 		frappe.set_user("Administrator")
 
+<<<<<<< HEAD
+=======
+		# so that this test doesn't affect other tests
+		frappe.db.sql("""delete from `tabEmployee Leave Approver`""")
+
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	def _clear_roles(self):
 		frappe.db.sql("""delete from `tabHas Role` where parent in
 			("test@example.com", "test1@example.com", "test2@example.com")""")
@@ -56,6 +62,32 @@ class TestLeaveApplication(unittest.TestCase):
 	def _clear_applications(self):
 		frappe.db.sql("""delete from `tabLeave Application`""")
 
+<<<<<<< HEAD
+=======
+	def _add_employee_leave_approver(self, employee, leave_approver):
+		temp_session_user = frappe.session.user
+		frappe.set_user("Administrator")
+		employee = frappe.get_doc("Employee", employee)
+		employee.append("leave_approvers", {
+			"doctype": "Employee Leave Approver",
+			"leave_approver": leave_approver
+		})
+		employee.save()
+		frappe.set_user(temp_session_user)
+
+	def _remove_employee_leave_approver(self, employee, leave_approver):
+		temp_session_user = frappe.session.user
+		frappe.set_user("Administrator")
+		employee = frappe.get_doc("Employee", employee)
+		d = employee.get("leave_approvers", {
+			"leave_approver": leave_approver
+		})
+		if d:
+			employee.get("leave_approvers").remove(d[0])
+			employee.save()
+		frappe.set_user(temp_session_user)
+
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	def get_application(self, doc):
 		application = frappe.copy_doc(doc)
 		application.from_date = "2013-01-01"
@@ -77,7 +109,10 @@ class TestLeaveApplication(unittest.TestCase):
 
 		application = self.get_application(_test_records[0])
 		application.insert()
+<<<<<<< HEAD
 		application.status = "Approved"
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		self.assertRaises(LeaveDayBlockedError, application.submit)
 
 		frappe.set_user("test1@example.com")
@@ -205,6 +240,10 @@ class TestLeaveApplication(unittest.TestCase):
 		from frappe.utils.user import add_role
 		add_role("test1@example.com", "Employee")
 		add_role("test@example.com", "Leave Approver")
+<<<<<<< HEAD
+=======
+		self._add_employee_leave_approver("_T-Employee-00002", "test@example.com")
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 
 		make_allocation_record(employee="_T-Employee-00002")
 
@@ -217,7 +256,11 @@ class TestLeaveApplication(unittest.TestCase):
 
 		frappe.set_user("test1@example.com")
 		application.insert()
+<<<<<<< HEAD
 		application.status = "Approved"
+=======
+
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		frappe.set_user("test@example.com")
 		self.assertRaises(LeaveDayBlockedError, application.submit)
 

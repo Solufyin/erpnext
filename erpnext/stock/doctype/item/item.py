@@ -568,7 +568,11 @@ class Item(WebsiteGenerator):
 					where ifnull(item_wise_tax_detail, '') != ''""".format(dt), as_dict=1):
 
 				item_wise_tax_detail = json.loads(d.item_wise_tax_detail)
+<<<<<<< HEAD
 				if isinstance(item_wise_tax_detail, dict) and old_name in item_wise_tax_detail:
+=======
+				if old_name in item_wise_tax_detail:
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 					item_wise_tax_detail[new_name] = item_wise_tax_detail[old_name]
 					item_wise_tax_detail.pop(old_name)
 

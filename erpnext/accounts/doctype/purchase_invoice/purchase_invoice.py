@@ -694,7 +694,11 @@ class PurchaseInvoice(BuyingController):
 				if account_type != 'Fixed Asset':
 					frappe.throw(_("Row {0}# Account must be of type 'Fixed Asset'").format(d.idx))
 
+<<<<<<< HEAD
 	def on_recurring(self, reference_doc, auto_repeat_doc):
+=======
+	def on_recurring(self, reference_doc, subscription_doc):
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		self.due_date = None
 
 @frappe.whitelist()

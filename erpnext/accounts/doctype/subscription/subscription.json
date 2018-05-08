@@ -1,9 +1,15 @@
 {
  "allow_copy": 0, 
  "allow_guest_to_view": 0, 
+<<<<<<< HEAD
  "allow_import": 0, 
  "allow_rename": 0, 
  "autoname": "SUBC.####", 
+=======
+ "allow_import": 1, 
+ "allow_rename": 1, 
+ "autoname": "naming_series:", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
  "beta": 0, 
  "creation": "2017-07-18 17:50:43.967266", 
  "custom": 0, 
@@ -19,19 +25,31 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "fieldname": "subscriber", 
    "fieldtype": "Link", 
+=======
+   "fieldname": "section_break_1", 
+   "fieldtype": "Section Break", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
    "in_filter": 0, 
    "in_global_search": 0, 
+<<<<<<< HEAD
    "in_list_view": 1, 
    "in_standard_filter": 0, 
    "label": "Subscriber", 
    "length": 0, 
    "no_copy": 0, 
    "options": "Subscriber", 
+=======
+   "in_list_view": 0, 
+   "in_standard_filter": 0, 
+   "length": 0, 
+   "no_copy": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
@@ -39,10 +57,16 @@
    "read_only": 0, 
    "remember_last_selected_value": 0, 
    "report_hide": 0, 
+<<<<<<< HEAD
    "reqd": 1, 
    "search_index": 0, 
    "set_only_once": 1, 
    "translatable": 0, 
+=======
+   "reqd": 0, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -51,8 +75,13 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "fieldname": "cancel_at_period_end", 
    "fieldtype": "Check", 
+=======
+   "fieldname": "naming_series", 
+   "fieldtype": "Select", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
@@ -60,10 +89,17 @@
    "in_global_search": 0, 
    "in_list_view": 0, 
    "in_standard_filter": 0, 
+<<<<<<< HEAD
    "label": "Cancel At End Of Period", 
    "length": 0, 
    "no_copy": 0, 
    "options": "", 
+=======
+   "label": "Series", 
+   "length": 0, 
+   "no_copy": 0, 
+   "options": "SUB-", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
@@ -74,7 +110,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -83,19 +122,33 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "fieldname": "start", 
    "fieldtype": "Date", 
+=======
+   "fieldname": "reference_doctype", 
+   "fieldtype": "Link", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
    "in_filter": 0, 
    "in_global_search": 0, 
+<<<<<<< HEAD
    "in_list_view": 0, 
    "in_standard_filter": 0, 
    "label": "Subscription Start Date", 
    "length": 0, 
    "no_copy": 0, 
    "options": "", 
+=======
+   "in_list_view": 1, 
+   "in_standard_filter": 0, 
+   "label": "Reference Doctype", 
+   "length": 0, 
+   "no_copy": 0, 
+   "options": "DocType", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
@@ -103,10 +156,16 @@
    "read_only": 0, 
    "remember_last_selected_value": 0, 
    "report_hide": 0, 
+<<<<<<< HEAD
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 1, 
    "translatable": 0, 
+=======
+   "reqd": 1, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -115,8 +174,13 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "fieldname": "cancelation_date", 
    "fieldtype": "Date", 
+=======
+   "fieldname": "reference_document", 
+   "fieldtype": "Dynamic Link", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
@@ -124,14 +188,22 @@
    "in_global_search": 0, 
    "in_list_view": 0, 
    "in_standard_filter": 0, 
+<<<<<<< HEAD
    "label": "Cancelation Date", 
    "length": 0, 
    "no_copy": 0, 
    "options": "", 
+=======
+   "label": "Reference Document", 
+   "length": 0, 
+   "no_copy": 1, 
+   "options": "reference_doctype", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
    "print_hide_if_no_value": 0, 
+<<<<<<< HEAD
    "read_only": 1, 
    "remember_last_selected_value": 0, 
    "report_hide": 0, 
@@ -139,6 +211,14 @@
    "search_index": 0, 
    "set_only_once": 0, 
    "translatable": 0, 
+=======
+   "read_only": 0, 
+   "remember_last_selected_value": 0, 
+   "report_hide": 0, 
+   "reqd": 1, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -147,8 +227,13 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "fieldname": "current_invoice_start", 
    "fieldtype": "Date", 
+=======
+   "fieldname": "column_break_5", 
+   "fieldtype": "Column Break", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
@@ -156,20 +241,30 @@
    "in_global_search": 0, 
    "in_list_view": 0, 
    "in_standard_filter": 0, 
+<<<<<<< HEAD
    "label": "Current Invoice Start Date", 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "length": 0, 
    "no_copy": 0, 
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
    "print_hide_if_no_value": 0, 
+<<<<<<< HEAD
    "read_only": 1, 
+=======
+   "read_only": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "remember_last_selected_value": 0, 
    "report_hide": 0, 
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -178,22 +273,33 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "fieldname": "current_invoice_end", 
+=======
+   "fieldname": "start_date", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "fieldtype": "Date", 
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
    "in_filter": 0, 
    "in_global_search": 0, 
+<<<<<<< HEAD
    "in_list_view": 0, 
    "in_standard_filter": 0, 
    "label": "Current Invoice End Date", 
+=======
+   "in_list_view": 1, 
+   "in_standard_filter": 0, 
+   "label": "Start Date", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "length": 0, 
    "no_copy": 0, 
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
    "print_hide_if_no_value": 0, 
+<<<<<<< HEAD
    "read_only": 1, 
    "remember_last_selected_value": 0, 
    "report_hide": 0, 
@@ -201,6 +307,14 @@
    "search_index": 0, 
    "set_only_once": 0, 
    "translatable": 0, 
+=======
+   "read_only": 0, 
+   "remember_last_selected_value": 0, 
+   "report_hide": 0, 
+   "reqd": 1, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -209,16 +323,26 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "fieldname": "trial_period_start", 
+=======
+   "fieldname": "end_date", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "fieldtype": "Date", 
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
    "in_filter": 0, 
    "in_global_search": 0, 
+<<<<<<< HEAD
    "in_list_view": 0, 
    "in_standard_filter": 0, 
    "label": "Trial Period Start Date", 
+=======
+   "in_list_view": 1, 
+   "in_standard_filter": 0, 
+   "label": "End Date", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "length": 0, 
    "no_copy": 0, 
    "permlevel": 0, 
@@ -230,8 +354,12 @@
    "report_hide": 0, 
    "reqd": 0, 
    "search_index": 0, 
+<<<<<<< HEAD
    "set_only_once": 1, 
    "translatable": 0, 
+=======
+   "set_only_once": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -240,9 +368,14 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "depends_on": "eval:doc.trial_period_start", 
    "fieldname": "trial_period_end", 
    "fieldtype": "Date", 
+=======
+   "fieldname": "submit_on_creation", 
+   "fieldtype": "Check", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
@@ -250,7 +383,11 @@
    "in_global_search": 0, 
    "in_list_view": 0, 
    "in_standard_filter": 0, 
+<<<<<<< HEAD
    "label": "Trial Period End Date", 
+=======
+   "label": "Submit on Creation", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "length": 0, 
    "no_copy": 0, 
    "permlevel": 0, 
@@ -262,8 +399,12 @@
    "report_hide": 0, 
    "reqd": 0, 
    "search_index": 0, 
+<<<<<<< HEAD
    "set_only_once": 1, 
    "translatable": 0, 
+=======
+   "set_only_once": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -272,18 +413,31 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "fieldname": "cb_1", 
    "fieldtype": "Column Break", 
+=======
+   "fieldname": "disabled", 
+   "fieldtype": "Check", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
    "in_filter": 0, 
    "in_global_search": 0, 
+<<<<<<< HEAD
    "in_list_view": 0, 
    "in_standard_filter": 0, 
    "label": "", 
    "length": 0, 
    "no_copy": 0, 
+=======
+   "in_list_view": 1, 
+   "in_standard_filter": 0, 
+   "label": "Disabled", 
+   "length": 0, 
+   "no_copy": 1, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
@@ -294,7 +448,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -303,8 +460,13 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "fieldname": "status", 
    "fieldtype": "Select", 
+=======
+   "fieldname": "section_break_10", 
+   "fieldtype": "Section Break", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
@@ -312,21 +474,33 @@
    "in_global_search": 0, 
    "in_list_view": 0, 
    "in_standard_filter": 0, 
+<<<<<<< HEAD
    "label": "Status", 
    "length": 0, 
    "no_copy": 0, 
    "options": "\nTrialling\nActive\nPast Due Date\nCancelled\nUnpaid",
+=======
+   "length": 0, 
+   "no_copy": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
    "print_hide_if_no_value": 0, 
+<<<<<<< HEAD
    "read_only": 1, 
+=======
+   "read_only": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "remember_last_selected_value": 0, 
    "report_hide": 0, 
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -335,21 +509,35 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "default": "0", 
    "description": "Number of days that the subscriber has to pay invoices generated by this subscription", 
    "fieldname": "days_until_due", 
    "fieldtype": "Int", 
+=======
+   "fieldname": "frequency", 
+   "fieldtype": "Select", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
    "in_filter": 0, 
    "in_global_search": 0, 
+<<<<<<< HEAD
    "in_list_view": 0, 
    "in_standard_filter": 0, 
    "label": "Days Until Due", 
    "length": 0, 
    "no_copy": 0, 
    "options": "", 
+=======
+   "in_list_view": 1, 
+   "in_standard_filter": 0, 
+   "label": "Frequency", 
+   "length": 0, 
+   "no_copy": 0, 
+   "options": "\nDaily\nWeekly\nMonthly\nQuarterly\nHalf-yearly\nYearly", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
@@ -357,10 +545,16 @@
    "read_only": 0, 
    "remember_last_selected_value": 0, 
    "report_hide": 0, 
+<<<<<<< HEAD
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
    "translatable": 0, 
+=======
+   "reqd": 1, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -369,9 +563,14 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "default": "1", 
    "fieldname": "quantity", 
    "fieldtype": "Int", 
+=======
+   "fieldname": "column_break_13", 
+   "fieldtype": "Column Break", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
@@ -379,7 +578,10 @@
    "in_global_search": 0, 
    "in_list_view": 0, 
    "in_standard_filter": 0, 
+<<<<<<< HEAD
    "label": "Quantity", 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "length": 0, 
    "no_copy": 0, 
    "permlevel": 0, 
@@ -392,7 +594,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -401,9 +606,15 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "depends_on": "", 
    "fieldname": "sb_4", 
    "fieldtype": "Section Break", 
+=======
+   "depends_on": "eval: in_list([\"Monthly\", \"Quarterly\", \"Yearly\"], doc.frequency)", 
+   "fieldname": "repeat_on_day", 
+   "fieldtype": "Int", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
@@ -411,7 +622,11 @@
    "in_global_search": 0, 
    "in_list_view": 0, 
    "in_standard_filter": 0, 
+<<<<<<< HEAD
    "label": "Plans", 
+=======
+   "label": "Repeat on Day", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "length": 0, 
    "no_copy": 0, 
    "permlevel": 0, 
@@ -424,7 +639,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -433,8 +651,13 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "fieldname": "plans", 
    "fieldtype": "Table", 
+=======
+   "fieldname": "next_schedule_date", 
+   "fieldtype": "Date", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
@@ -442,6 +665,7 @@
    "in_global_search": 0, 
    "in_list_view": 0, 
    "in_standard_filter": 0, 
+<<<<<<< HEAD
    "label": "Plans", 
    "length": 0, 
    "no_copy": 0, 
@@ -457,15 +681,36 @@
    "search_index": 0, 
    "set_only_once": 0, 
    "translatable": 0, 
+=======
+   "label": "Next Schedule Date", 
+   "length": 0, 
+   "no_copy": 1, 
+   "permlevel": 0, 
+   "precision": "", 
+   "print_hide": 1, 
+   "print_hide_if_no_value": 0, 
+   "read_only": 1, 
+   "remember_last_selected_value": 0, 
+   "report_hide": 0, 
+   "reqd": 0, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
    "allow_bulk_edit": 0, 
    "allow_on_submit": 0, 
    "bold": 0, 
+<<<<<<< HEAD
    "collapsible": 0, 
    "columns": 0, 
    "fieldname": "sb_1", 
+=======
+   "collapsible": 1, 
+   "columns": 0, 
+   "fieldname": "notification", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "fieldtype": "Section Break", 
    "hidden": 0, 
    "ignore_user_permissions": 0, 
@@ -474,7 +719,11 @@
    "in_global_search": 0, 
    "in_list_view": 0, 
    "in_standard_filter": 0, 
+<<<<<<< HEAD
    "label": "Taxes", 
+=======
+   "label": "Notification", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "length": 0, 
    "no_copy": 0, 
    "permlevel": 0, 
@@ -487,7 +736,10 @@
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
+<<<<<<< HEAD
    "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }, 
   {
@@ -496,7 +748,409 @@
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
+<<<<<<< HEAD
    "fieldname": "tax_template", 
+   "fieldtype": "Link", 
+=======
+   "fieldname": "notify_by_email", 
+   "fieldtype": "Check", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "hidden": 0, 
+   "ignore_user_permissions": 0, 
+   "ignore_xss_filter": 0, 
+   "in_filter": 0, 
+   "in_global_search": 0, 
+   "in_list_view": 0, 
+   "in_standard_filter": 0, 
+<<<<<<< HEAD
+   "label": "Sales Taxes and Charges Template", 
+   "length": 0, 
+   "no_copy": 0, 
+   "options": "Sales Taxes and Charges Template", 
+=======
+   "label": "Notify by Email", 
+   "length": 0, 
+   "no_copy": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "permlevel": 0, 
+   "precision": "", 
+   "print_hide": 0, 
+   "print_hide_if_no_value": 0, 
+   "read_only": 0, 
+   "remember_last_selected_value": 0, 
+   "report_hide": 0, 
+   "reqd": 0, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+<<<<<<< HEAD
+   "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "unique": 0
+  }, 
+  {
+   "allow_bulk_edit": 0, 
+   "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
+   "columns": 0, 
+<<<<<<< HEAD
+   "depends_on": "", 
+   "description": "", 
+   "fieldname": "sb_2", 
+   "fieldtype": "Section Break", 
+=======
+   "depends_on": "eval: doc.notify_by_email", 
+   "description": "To add dynamic subject, use jinja tags like\n\n<div><pre><code>New {{ doc.doctype }} #{{ doc.name }}</code></pre></div>", 
+   "fieldname": "subject", 
+   "fieldtype": "Data", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "hidden": 0, 
+   "ignore_user_permissions": 0, 
+   "ignore_xss_filter": 0, 
+   "in_filter": 0, 
+   "in_global_search": 0, 
+   "in_list_view": 0, 
+   "in_standard_filter": 0, 
+<<<<<<< HEAD
+   "label": "Discounts", 
+=======
+   "label": "Subject", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "length": 0, 
+   "no_copy": 0, 
+   "permlevel": 0, 
+   "precision": "", 
+   "print_hide": 0, 
+   "print_hide_if_no_value": 0, 
+   "read_only": 0, 
+   "remember_last_selected_value": 0, 
+   "report_hide": 0, 
+   "reqd": 0, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+<<<<<<< HEAD
+   "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "unique": 0
+  }, 
+  {
+   "allow_bulk_edit": 0, 
+   "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
+   "columns": 0, 
+<<<<<<< HEAD
+   "fieldname": "apply_additional_discount", 
+   "fieldtype": "Select", 
+=======
+   "fieldname": "column_break_17", 
+   "fieldtype": "Column Break", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "hidden": 0, 
+   "ignore_user_permissions": 0, 
+   "ignore_xss_filter": 0, 
+   "in_filter": 0, 
+   "in_global_search": 0, 
+   "in_list_view": 0, 
+   "in_standard_filter": 0, 
+<<<<<<< HEAD
+   "label": "Apply Additional Discount On", 
+   "length": 0, 
+   "no_copy": 0, 
+   "options": "\nGrand Total\nNet total", 
+=======
+   "length": 0, 
+   "no_copy": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "permlevel": 0, 
+   "precision": "", 
+   "print_hide": 0, 
+   "print_hide_if_no_value": 0, 
+   "read_only": 0, 
+   "remember_last_selected_value": 0, 
+   "report_hide": 0, 
+   "reqd": 0, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+<<<<<<< HEAD
+   "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "unique": 0
+  }, 
+  {
+   "allow_bulk_edit": 0, 
+   "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
+   "columns": 0, 
+<<<<<<< HEAD
+   "depends_on": "", 
+   "fieldname": "cb_2", 
+   "fieldtype": "Column Break", 
+=======
+   "depends_on": "notify_by_email", 
+   "fieldname": "recipients", 
+   "fieldtype": "Small Text", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "hidden": 0, 
+   "ignore_user_permissions": 0, 
+   "ignore_xss_filter": 0, 
+   "in_filter": 0, 
+   "in_global_search": 0, 
+   "in_list_view": 0, 
+   "in_standard_filter": 0, 
+<<<<<<< HEAD
+   "label": "", 
+=======
+   "label": "Recipients", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "length": 0, 
+   "no_copy": 0, 
+   "permlevel": 0, 
+   "precision": "", 
+   "print_hide": 0, 
+   "print_hide_if_no_value": 0, 
+   "read_only": 0, 
+   "remember_last_selected_value": 0, 
+   "report_hide": 0, 
+   "reqd": 0, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+<<<<<<< HEAD
+   "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "unique": 0
+  }, 
+  {
+   "allow_bulk_edit": 0, 
+   "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
+   "columns": 0, 
+<<<<<<< HEAD
+   "depends_on": "", 
+   "fieldname": "additional_discount_percentage", 
+   "fieldtype": "Percent", 
+=======
+   "depends_on": "notify_by_email", 
+   "fieldname": "print_format", 
+   "fieldtype": "Link", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "hidden": 0, 
+   "ignore_user_permissions": 0, 
+   "ignore_xss_filter": 0, 
+   "in_filter": 0, 
+   "in_global_search": 0, 
+   "in_list_view": 0, 
+   "in_standard_filter": 0, 
+<<<<<<< HEAD
+   "label": "Additional DIscount Percentage", 
+   "length": 0, 
+   "no_copy": 0, 
+   "options": "", 
+=======
+   "label": "Print Format", 
+   "length": 0, 
+   "no_copy": 0, 
+   "options": "Print Format", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "permlevel": 0, 
+   "precision": "", 
+   "print_hide": 0, 
+   "print_hide_if_no_value": 0, 
+   "read_only": 0, 
+   "remember_last_selected_value": 0, 
+   "report_hide": 0, 
+   "reqd": 0, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+<<<<<<< HEAD
+   "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "unique": 0
+  }, 
+  {
+   "allow_bulk_edit": 0, 
+   "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 1, 
+   "columns": 0, 
+<<<<<<< HEAD
+   "depends_on": "", 
+   "fieldname": "additional_discount_amount", 
+   "fieldtype": "Currency", 
+=======
+   "depends_on": "eval:doc.notify_by_email", 
+   "fieldname": "section_break_20", 
+   "fieldtype": "Section Break", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "hidden": 0, 
+   "ignore_user_permissions": 0, 
+   "ignore_xss_filter": 0, 
+   "in_filter": 0, 
+   "in_global_search": 0, 
+   "in_list_view": 0, 
+   "in_standard_filter": 0, 
+<<<<<<< HEAD
+   "label": "Additional DIscount Amount", 
+=======
+   "label": "Message", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "length": 0, 
+   "no_copy": 0, 
+   "permlevel": 0, 
+   "precision": "", 
+   "print_hide": 0, 
+   "print_hide_if_no_value": 0, 
+   "read_only": 0, 
+   "remember_last_selected_value": 0, 
+   "report_hide": 0, 
+   "reqd": 0, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+<<<<<<< HEAD
+   "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "unique": 0
+  }, 
+  {
+   "allow_bulk_edit": 0, 
+   "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
+   "columns": 0, 
+<<<<<<< HEAD
+   "default": "", 
+   "depends_on": "eval:doc.invoices", 
+   "fieldname": "sb_3", 
+   "fieldtype": "Section Break", 
+=======
+   "default": "Please find attached {{ doc.doctype }} #{{ doc.name }}", 
+   "fieldname": "message", 
+   "fieldtype": "Text", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "hidden": 0, 
+   "ignore_user_permissions": 0, 
+   "ignore_xss_filter": 0, 
+   "in_filter": 0, 
+   "in_global_search": 0, 
+   "in_list_view": 0, 
+   "in_standard_filter": 0, 
+<<<<<<< HEAD
+   "label": "Invoices", 
+=======
+   "label": "Message", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "length": 0, 
+   "no_copy": 0, 
+   "permlevel": 0, 
+   "precision": "", 
+   "print_hide": 0, 
+   "print_hide_if_no_value": 0, 
+   "read_only": 0, 
+   "remember_last_selected_value": 0, 
+   "report_hide": 0, 
+   "reqd": 0, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+<<<<<<< HEAD
+   "translatable": 0, 
+=======
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "unique": 0
+  }, 
+  {
+   "allow_bulk_edit": 0, 
+   "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 1, 
+   "columns": 0, 
+<<<<<<< HEAD
+   "depends_on": "", 
+   "fieldname": "invoices", 
+   "fieldtype": "Table", 
+=======
+   "depends_on": "eval: !doc.__islocal", 
+   "fieldname": "section_break_16", 
+   "fieldtype": "Section Break", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "hidden": 0, 
+   "ignore_user_permissions": 0, 
+   "ignore_xss_filter": 0, 
+   "in_filter": 0, 
+   "in_global_search": 0, 
+   "in_list_view": 0, 
+   "in_standard_filter": 0, 
+<<<<<<< HEAD
+   "label": "Invoices", 
+   "length": 0, 
+   "no_copy": 0, 
+   "options": "Subscription Invoice", 
+=======
+   "label": "", 
+   "length": 0, 
+   "no_copy": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
+   "permlevel": 0, 
+   "precision": "", 
+   "print_hide": 0, 
+   "print_hide_if_no_value": 0, 
+   "read_only": 0, 
+   "remember_last_selected_value": 0, 
+   "report_hide": 0, 
+   "reqd": 0, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+<<<<<<< HEAD
+   "translatable": 0, 
+=======
+   "unique": 0
+  }, 
+  {
+   "allow_bulk_edit": 0, 
+   "allow_on_submit": 1, 
+   "bold": 0, 
+   "collapsible": 0, 
+   "columns": 0, 
+   "default": "Draft", 
+   "fieldname": "status", 
+   "fieldtype": "Select", 
+   "hidden": 0, 
+   "ignore_user_permissions": 0, 
+   "ignore_xss_filter": 0, 
+   "in_filter": 0, 
+   "in_global_search": 0, 
+   "in_list_view": 1, 
+   "in_standard_filter": 0, 
+   "label": "Status", 
+   "length": 0, 
+   "no_copy": 0, 
+   "options": "\nDraft\nStopped\nSubmitted\nCancelled\nCompleted", 
+   "permlevel": 0, 
+   "precision": "", 
+   "print_hide": 0, 
+   "print_hide_if_no_value": 0, 
+   "read_only": 1, 
+   "remember_last_selected_value": 0, 
+   "report_hide": 0, 
+   "reqd": 0, 
+   "search_index": 0, 
+   "set_only_once": 0, 
+   "unique": 0
+  }, 
+  {
+   "allow_bulk_edit": 0, 
+   "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
+   "columns": 0, 
+   "fieldname": "amended_from", 
    "fieldtype": "Link", 
    "hidden": 0, 
    "ignore_user_permissions": 0, 
@@ -505,249 +1159,20 @@
    "in_global_search": 0, 
    "in_list_view": 0, 
    "in_standard_filter": 0, 
-   "label": "Sales Taxes and Charges Template", 
+   "label": "Amended From", 
    "length": 0, 
-   "no_copy": 0, 
-   "options": "Sales Taxes and Charges Template", 
+   "no_copy": 1, 
+   "options": "Subscription", 
    "permlevel": 0, 
-   "precision": "", 
-   "print_hide": 0, 
+   "print_hide": 1, 
    "print_hide_if_no_value": 0, 
-   "read_only": 0, 
+   "read_only": 1, 
    "remember_last_selected_value": 0, 
    "report_hide": 0, 
    "reqd": 0, 
    "search_index": 0, 
    "set_only_once": 0, 
-   "translatable": 0, 
-   "unique": 0
-  }, 
-  {
-   "allow_bulk_edit": 0, 
-   "allow_on_submit": 0, 
-   "bold": 0, 
-   "collapsible": 0, 
-   "columns": 0, 
-   "depends_on": "", 
-   "description": "", 
-   "fieldname": "sb_2", 
-   "fieldtype": "Section Break", 
-   "hidden": 0, 
-   "ignore_user_permissions": 0, 
-   "ignore_xss_filter": 0, 
-   "in_filter": 0, 
-   "in_global_search": 0, 
-   "in_list_view": 0, 
-   "in_standard_filter": 0, 
-   "label": "Discounts", 
-   "length": 0, 
-   "no_copy": 0, 
-   "permlevel": 0, 
-   "precision": "", 
-   "print_hide": 0, 
-   "print_hide_if_no_value": 0, 
-   "read_only": 0, 
-   "remember_last_selected_value": 0, 
-   "report_hide": 0, 
-   "reqd": 0, 
-   "search_index": 0, 
-   "set_only_once": 0, 
-   "translatable": 0, 
-   "unique": 0
-  }, 
-  {
-   "allow_bulk_edit": 0, 
-   "allow_on_submit": 0, 
-   "bold": 0, 
-   "collapsible": 0, 
-   "columns": 0, 
-   "fieldname": "apply_additional_discount", 
-   "fieldtype": "Select", 
-   "hidden": 0, 
-   "ignore_user_permissions": 0, 
-   "ignore_xss_filter": 0, 
-   "in_filter": 0, 
-   "in_global_search": 0, 
-   "in_list_view": 0, 
-   "in_standard_filter": 0, 
-   "label": "Apply Additional Discount On", 
-   "length": 0, 
-   "no_copy": 0, 
-   "options": "\nGrand Total\nNet total", 
-   "permlevel": 0, 
-   "precision": "", 
-   "print_hide": 0, 
-   "print_hide_if_no_value": 0, 
-   "read_only": 0, 
-   "remember_last_selected_value": 0, 
-   "report_hide": 0, 
-   "reqd": 0, 
-   "search_index": 0, 
-   "set_only_once": 0, 
-   "translatable": 0, 
-   "unique": 0
-  }, 
-  {
-   "allow_bulk_edit": 0, 
-   "allow_on_submit": 0, 
-   "bold": 0, 
-   "collapsible": 0, 
-   "columns": 0, 
-   "depends_on": "", 
-   "fieldname": "cb_2", 
-   "fieldtype": "Column Break", 
-   "hidden": 0, 
-   "ignore_user_permissions": 0, 
-   "ignore_xss_filter": 0, 
-   "in_filter": 0, 
-   "in_global_search": 0, 
-   "in_list_view": 0, 
-   "in_standard_filter": 0, 
-   "label": "", 
-   "length": 0, 
-   "no_copy": 0, 
-   "permlevel": 0, 
-   "precision": "", 
-   "print_hide": 0, 
-   "print_hide_if_no_value": 0, 
-   "read_only": 0, 
-   "remember_last_selected_value": 0, 
-   "report_hide": 0, 
-   "reqd": 0, 
-   "search_index": 0, 
-   "set_only_once": 0, 
-   "translatable": 0, 
-   "unique": 0
-  }, 
-  {
-   "allow_bulk_edit": 0, 
-   "allow_on_submit": 0, 
-   "bold": 0, 
-   "collapsible": 0, 
-   "columns": 0, 
-   "depends_on": "", 
-   "fieldname": "additional_discount_percentage", 
-   "fieldtype": "Percent", 
-   "hidden": 0, 
-   "ignore_user_permissions": 0, 
-   "ignore_xss_filter": 0, 
-   "in_filter": 0, 
-   "in_global_search": 0, 
-   "in_list_view": 0, 
-   "in_standard_filter": 0, 
-   "label": "Additional DIscount Percentage", 
-   "length": 0, 
-   "no_copy": 0, 
-   "options": "", 
-   "permlevel": 0, 
-   "precision": "", 
-   "print_hide": 0, 
-   "print_hide_if_no_value": 0, 
-   "read_only": 0, 
-   "remember_last_selected_value": 0, 
-   "report_hide": 0, 
-   "reqd": 0, 
-   "search_index": 0, 
-   "set_only_once": 0, 
-   "translatable": 0, 
-   "unique": 0
-  }, 
-  {
-   "allow_bulk_edit": 0, 
-   "allow_on_submit": 0, 
-   "bold": 0, 
-   "collapsible": 1, 
-   "columns": 0, 
-   "depends_on": "", 
-   "fieldname": "additional_discount_amount", 
-   "fieldtype": "Currency", 
-   "hidden": 0, 
-   "ignore_user_permissions": 0, 
-   "ignore_xss_filter": 0, 
-   "in_filter": 0, 
-   "in_global_search": 0, 
-   "in_list_view": 0, 
-   "in_standard_filter": 0, 
-   "label": "Additional DIscount Amount", 
-   "length": 0, 
-   "no_copy": 0, 
-   "permlevel": 0, 
-   "precision": "", 
-   "print_hide": 0, 
-   "print_hide_if_no_value": 0, 
-   "read_only": 0, 
-   "remember_last_selected_value": 0, 
-   "report_hide": 0, 
-   "reqd": 0, 
-   "search_index": 0, 
-   "set_only_once": 0, 
-   "translatable": 0, 
-   "unique": 0
-  }, 
-  {
-   "allow_bulk_edit": 0, 
-   "allow_on_submit": 0, 
-   "bold": 0, 
-   "collapsible": 0, 
-   "columns": 0, 
-   "default": "", 
-   "depends_on": "eval:doc.invoices", 
-   "fieldname": "sb_3", 
-   "fieldtype": "Section Break", 
-   "hidden": 0, 
-   "ignore_user_permissions": 0, 
-   "ignore_xss_filter": 0, 
-   "in_filter": 0, 
-   "in_global_search": 0, 
-   "in_list_view": 0, 
-   "in_standard_filter": 0, 
-   "label": "Invoices", 
-   "length": 0, 
-   "no_copy": 0, 
-   "permlevel": 0, 
-   "precision": "", 
-   "print_hide": 0, 
-   "print_hide_if_no_value": 0, 
-   "read_only": 0, 
-   "remember_last_selected_value": 0, 
-   "report_hide": 0, 
-   "reqd": 0, 
-   "search_index": 0, 
-   "set_only_once": 0, 
-   "translatable": 0, 
-   "unique": 0
-  }, 
-  {
-   "allow_bulk_edit": 0, 
-   "allow_on_submit": 0, 
-   "bold": 0, 
-   "collapsible": 1, 
-   "columns": 0, 
-   "depends_on": "", 
-   "fieldname": "invoices", 
-   "fieldtype": "Table", 
-   "hidden": 0, 
-   "ignore_user_permissions": 0, 
-   "ignore_xss_filter": 0, 
-   "in_filter": 0, 
-   "in_global_search": 0, 
-   "in_list_view": 0, 
-   "in_standard_filter": 0, 
-   "label": "Invoices", 
-   "length": 0, 
-   "no_copy": 0, 
-   "options": "Subscription Invoice", 
-   "permlevel": 0, 
-   "precision": "", 
-   "print_hide": 0, 
-   "print_hide_if_no_value": 0, 
-   "read_only": 0, 
-   "remember_last_selected_value": 0, 
-   "report_hide": 0, 
-   "reqd": 0, 
-   "search_index": 0, 
-   "set_only_once": 0, 
-   "translatable": 0, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "unique": 0
   }
  ], 
@@ -757,11 +1182,19 @@
  "idx": 0, 
  "image_view": 0, 
  "in_create": 0, 
+<<<<<<< HEAD
  "is_submittable": 0, 
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
  "modified": "2018-03-12 00:34:52.243133", 
+=======
+ "is_submittable": 1, 
+ "issingle": 0, 
+ "istable": 0, 
+ "max_attachments": 0, 
+ "modified": "2017-10-23 18:28:08.966403", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
  "modified_by": "Administrator", 
  "module": "Accounts", 
  "name": "Subscription", 
@@ -771,7 +1204,11 @@
   {
    "amend": 0, 
    "apply_user_permissions": 0, 
+<<<<<<< HEAD
    "cancel": 0, 
+=======
+   "cancel": 1, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "create": 1, 
    "delete": 1, 
    "email": 1, 
@@ -785,13 +1222,21 @@
    "role": "System Manager", 
    "set_user_permissions": 0, 
    "share": 1, 
+<<<<<<< HEAD
    "submit": 0, 
+=======
+   "submit": 1, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "write": 1
   }, 
   {
    "amend": 0, 
    "apply_user_permissions": 0, 
+<<<<<<< HEAD
    "cancel": 0, 
+=======
+   "cancel": 1, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "create": 1, 
    "delete": 1, 
    "email": 1, 
@@ -805,13 +1250,21 @@
    "role": "Accounts User", 
    "set_user_permissions": 0, 
    "share": 1, 
+<<<<<<< HEAD
    "submit": 0, 
+=======
+   "submit": 1, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "write": 1
   }, 
   {
    "amend": 0, 
    "apply_user_permissions": 0, 
+<<<<<<< HEAD
    "cancel": 0, 
+=======
+   "cancel": 1, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "create": 1, 
    "delete": 1, 
    "email": 1, 
@@ -825,18 +1278,30 @@
    "role": "Accounts Manager", 
    "set_user_permissions": 0, 
    "share": 1, 
+<<<<<<< HEAD
    "submit": 0, 
+=======
+   "submit": 1, 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
    "write": 1
   }
  ], 
  "quick_entry": 0, 
  "read_only": 0, 
  "read_only_onload": 0, 
+<<<<<<< HEAD
  "search_fields": "", 
  "show_name_in_global_search": 0, 
  "sort_field": "modified", 
  "sort_order": "DESC", 
  "title_field": "", 
+=======
+ "search_fields": "reference_document", 
+ "show_name_in_global_search": 0, 
+ "sort_field": "modified", 
+ "sort_order": "DESC", 
+ "title_field": "reference_document", 
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
  "track_changes": 1, 
  "track_seen": 0
 }

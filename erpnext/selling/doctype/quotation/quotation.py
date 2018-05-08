@@ -103,7 +103,11 @@ class Quotation(SellingController):
 			print_lst.append(lst1)
 		return print_lst
 
+<<<<<<< HEAD
 	def on_recurring(self, reference_doc, auto_repeat_doc):
+=======
+	def on_recurring(self, reference_doc, subscription_doc):
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		self.valid_till = None
 
 def get_list_context(context=None):
@@ -127,11 +131,21 @@ def make_sales_order(source_name, target_doc=None):
 
 def _make_sales_order(source_name, target_doc=None, ignore_permissions=False):
 	customer = _make_customer(source_name, ignore_permissions)
+<<<<<<< HEAD
 
+=======
+	quot_coupon = frappe.db.get_value("Quotation", source_name,
+	                                ["coupon"])
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 	def set_missing_values(source, target):
 		if customer:
 			target.customer = customer.name
 			target.customer_name = customer.customer_name
+<<<<<<< HEAD
+=======
+		if quot_coupon:
+			target.coupon = quot_coupon
+>>>>>>> 40a584d5ce3e69a651094c866f1ddc7f5302b825
 		target.ignore_pricing_rule = 1
 		target.flags.ignore_permissions = ignore_permissions
 		target.run_method("set_missing_values")
