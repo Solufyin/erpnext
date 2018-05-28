@@ -408,5 +408,5 @@ def get_data():
 					"doctype": "Employee"
 				},
 			]
-		},
+		}
 	]
