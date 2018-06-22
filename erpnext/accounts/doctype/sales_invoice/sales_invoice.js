@@ -98,6 +98,7 @@ erpnext.accounts.SalesInvoiceController = erpnext.selling.SellingController.exte
 			this.frm.cscript.sales_order_btn();
 			this.frm.cscript.delivery_note_btn();
 			this.frm.cscript.quotation_btn();
+			this.frm.cscript.merge_btn();
 		}
 
 		this.set_default_print_format();
@@ -142,7 +143,7 @@ erpnext.accounts.SalesInvoiceController = erpnext.selling.SellingController.exte
 			}
 		}
 	},
-
+	
 	sales_order_btn: function() {
 		var me = this;
 		this.$sales_order_btn = this.frm.add_custom_button(__('Sales Order'),
@@ -210,7 +211,30 @@ erpnext.accounts.SalesInvoiceController = erpnext.selling.SellingController.exte
 				});
 			}, __("Get items from"));
 	},
-
+	
+	merge_btn: function() {
+		var me = this;
+		this.$merge_btn = this.frm.add_custom_button(__('Merge'),
+			function() {
+				console.log("::::::Calling Merge Button:::::::::")
+				erpnext.utils.map_current_doc({
+					method: "erpnext.selling.doctype.sales_order.sales_order.make_sales_invoice",
+					source_doctype: "Sales Order",
+					target: me.frm,
+					setters: {
+						customer: me.frm.doc.customer || undefined,
+					},
+					get_query_filters: {
+						docstatus: 1,
+						status: ["!=", "Closed"],
+						per_billed: ["<", 99.99],
+						company: me.frm.doc.company
+					}
+				})
+				
+			}, __("Merge sale invoice"));
+	},
+	
 	tc_name: function() {
 		this.get_terms();
 	},

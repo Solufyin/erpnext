@@ -336,7 +336,7 @@ def get_children(doctype, parent=None, company=None, is_root=False, is_tree=Fals
 			['reports_to', '=', employee.get('value')]
 		])
 		employee.expandable = 1 if is_expandable else 0
-
+	print "::::::::::::emp:::::::::",employee
 	return employees
 
 

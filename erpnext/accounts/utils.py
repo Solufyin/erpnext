@@ -241,6 +241,7 @@ def add_ac(args=None):
 	args.doctype = "Account"
 	args = make_tree_args(**args)
 
+	print "\n args ::::::::::::", args
 	ac = frappe.new_doc("Account")
 
 	if args.get("ignore_permissions"):
@@ -259,7 +260,7 @@ def add_ac(args=None):
 		ac.flags.ignore_mandatory = True
 
 	ac.insert()
-
+	print "\n ac :::::ddd:::::", ac
 	return ac.name
 
 @frappe.whitelist()
@@ -710,6 +711,9 @@ def get_children(doctype, parent, company, is_root=False):
 			if each.account_currency != company_currency:
 				each["balance_in_account_currency"] = flt(get_balance_on(each.get("value")))
 
+	print "\n"
+	print "\n acc ::::::dddd::::::::::", acc
+	print "\n"
 	return acc
 
 def create_payment_gateway_account(gateway):

@@ -13,6 +13,9 @@ from erpnext.accounts.doctype.payment_entry.payment_entry import get_payment_ent
 from frappe.integrations.utils import get_payment_gateway_controller
 from frappe.utils.background_jobs import enqueue
 
+import requests
+import time
+
 class PaymentRequest(Document):
 	def validate(self):
 		self.validate_reference_document()
@@ -85,7 +88,9 @@ class PaymentRequest(Document):
 			data = frappe.db.get_value(self.reference_doctype, self.reference_name, ["student_name"], as_dict=1)
 			data.update({"company": frappe.defaults.get_defaults().company})
 
+		print "\n self.payment_gateway :::::::::::::", self, self.payment_gateway
 		controller = get_payment_gateway_controller(self.payment_gateway)
+		print "n controller ::::::::::::::", controller
 		controller.validate_transaction_currency(self.currency)
 
 		if hasattr(controller, 'validate_minimum_transaction_amount'):
@@ -104,6 +109,7 @@ class PaymentRequest(Document):
 		})
 
 	def set_as_paid(self):
+		print "\n :::::::::::called set_as_paid:::"
 		if frappe.session.user == "Guest":
 			frappe.set_user("Administrator")
 
@@ -238,49 +244,261 @@ class PaymentRequest(Document):
 @frappe.whitelist(allow_guest=True)
 def make_payment_request(**args):
 	"""Make payment request"""
+	
+	print "\n ::::::::::::call make_payment_request:::::::"
 
 	args = frappe._dict(args)
+	print "\n ::::::::::::args:::::::",args
+	
 	ref_doc = frappe.get_doc(args.dt, args.dn)
+	print "\n ::::::::::::ref_doc:::::::",ref_doc
+	
 	grand_total = get_amount(ref_doc, args.dt)
+	print "\n ::::::::::::grand_total:::::::",grand_total
+	
 	gateway_account = get_gateway_details(args) or frappe._dict()
-
-	existing_payment_request = frappe.db.get_value("Payment Request",
-		{"reference_doctype": args.dt, "reference_name": args.dn, "docstatus": ["!=", 2]})
-
-	if existing_payment_request:
-		pr = frappe.get_doc("Payment Request", existing_payment_request)
-
+	print "\n :::::ddddddddddddd:::::::gateway_account:::::::",gateway_account
+	
+	pg_name=gateway_account.get('payment_gateway')
+	print "\n :::::::XXXXXX:::::::::",pg_name
+	
+	if pg_name == "PayPal":
+		
+		existing_payment_request = frappe.db.get_value("Payment Request",
+			{"reference_doctype": args.dt, "reference_name": args.dn, "docstatus": ["!=", 2]})
+		print "\n ::::::::::::::::existing_payment_request::::::::",existing_payment_request
+		
+		if existing_payment_request:
+			pr = frappe.get_doc("Payment Request", existing_payment_request)
+			print "\n :::::::::::pr::::::",pr
+			
+		else:
+			pr = frappe.new_doc("Payment Request")
+			pr.update({
+				"payment_gateway_account": gateway_account.get("name"),
+				"payment_gateway": gateway_account.get("payment_gateway"),
+				"payment_account": gateway_account.get("payment_account"),
+				"currency": ref_doc.currency,
+				"grand_total": grand_total,
+				"email_to": args.recipient_id or "",
+				"subject": _("Payment Request for {0}").format(args.dn),
+				"message": gateway_account.get("message") or get_dummy_message(ref_doc),
+				"reference_doctype": args.dt,
+				"reference_name": args.dn
+			})
+			
+			if args.order_type == "Shopping Cart" or args.mute_email:
+				pr.flags.mute_email = True
+	
+			if args.submit_doc:
+				pr.insert(ignore_permissions=True)
+				pr.submit()
+		
+		if args.order_type == "Shopping Cart":
+			print "\n pr.get_payment_url() :::::::::::", pr.get_payment_url()
+			frappe.db.commit()
+			frappe.local.response["type"] = "redirect"
+			frappe.local.response["location"] = pr.get_payment_url()
+		
+		if args.return_doc:
+			return pr
 	else:
-		pr = frappe.new_doc("Payment Request")
-		pr.update({
-			"payment_gateway_account": gateway_account.get("name"),
-			"payment_gateway": gateway_account.get("payment_gateway"),
-			"payment_account": gateway_account.get("payment_account"),
-			"currency": ref_doc.currency,
-			"grand_total": grand_total,
-			"email_to": args.recipient_id or "",
-			"subject": _("Payment Request for {0}").format(args.dn),
-			"message": gateway_account.get("message") or get_dummy_message(ref_doc),
-			"reference_doctype": args.dt,
-			"reference_name": args.dn
-		})
+		print "\n Called multisafepayment gateway"
+		
+		"""Make payment request"""
+	
+		print "\n ::::::::::::call make_payment_request222:::::::"
+		
+		args = frappe._dict(args)
+		print "\n ::::::::::::MY ARGS:::::::",args
+		so_id = args.get('dn')
+		print "\n ::::::::::::so_id:::::::",so_id
+		
+		so_req = frappe.get_doc('Sales Order',so_id)
+		print "\n so_req::::::::::",so_req.name
+		print "\n so_req::::::::::",so_req.currency
+		print "\n so_req::::::::::",so_req.grand_total
+		
+		
+			
+		
+		ref_doc = frappe.get_doc(args.dt, args.dn)
+	 	print "\n ::::::::::::ref_doc:::::::",ref_doc
+	# 	
+		grand_total = get_amount(ref_doc, args.dt)
+	 	print "\n ::::::::::::grand_total:::::::",grand_total
+	# 	
+		gateway_account = get_gateway_details(args) or frappe._dict()
+	 	print "\n ::::::::::::gateway_account:::::::",gateway_account
+	# 
+		existing_payment_request = frappe.db.get_value("Payment Request",
+			{"reference_doctype": args.dt, "reference_name": args.dn, "docstatus": ["!=", 2]})
+	 	print "\n ::::::::::::::::existing_payment_request::::::::",existing_payment_request
+	
+		"""Make payment multisafepay request"""
+		#time_date = time.strftime('%Y%m%d%H%M%S')
+		print 'Mulltisaflepay>>>>>>>>>..///////'
+		
 
-		if args.order_type == "Shopping Cart" or args.mute_email:
-			pr.flags.mute_email = True
 
-		if args.submit_doc:
-			pr.insert(ignore_permissions=True)
-			pr.submit()
-
-	if args.order_type == "Shopping Cart":
-		frappe.db.commit()
+		res_dict = frappe.get_all("Multisafepay Settings", "api_key")
+		gateway_val = (res_dict and res_dict[0]) or {}
+		print "\n :::::::gateway_val::::::::",gateway_val
+		
+		
+		api_key = gateway_val.get("api_key")
+		multisafe_url = 'https://testapi.multisafepay.com/v1/json/orders?api_key=%s' %(api_key)
+		print "\n \n type :::::::::::::", type(grand_total)
+		vals = 	{ 
+			 "type": "redirect",
+			 "order_id": str(so_req.name),
+			 "currency": str(so_req.currency),
+			 "amount": int(grand_total),
+			 "description": "This is a test",
+		
+		} 
+		print "\n :;:::URL:::",multisafe_url
+		res = requests.post(multisafe_url, vals)
+		response = res.json()
+		print 'ressssss>>>>>>>>>xxxx>>>>>>>>>>', response
+		
 		frappe.local.response["type"] = "redirect"
-		frappe.local.response["location"] = pr.get_payment_url()
-
-	if args.return_doc:
-		return pr
-
-	return pr.as_dict()
+		frappe.local.response["location"] = response['data']['payment_url']
+		
+		print "\n ::::::End of the statement::::::::::"
+		
+		
+		if existing_payment_request:
+			pr = frappe.get_doc("Payment Request", existing_payment_request)
+			print "\n :::::::::::pr::::::",pr
+	
+		else:
+			pr = frappe.new_doc("Payment Request")
+			pr.update({
+				"payment_gateway_account": gateway_account.get("name"),
+				"payment_gateway": gateway_account.get("payment_gateway"),
+				"payment_account": gateway_account.get("payment_account"),
+				"currency": ref_doc.currency,
+				"grand_total": grand_total,
+				"email_to": args.recipient_id or "",
+				"subject": _("Payment Request for {0}").format(args.dn),
+				"message": gateway_account.get("message") or get_dummy_message(ref_doc),
+				"reference_doctype": args.dt,
+				"reference_name": args.dn
+			})
+			
+			print "\n ::::1111111pr:::::::::::",pr.name, args.order_type
+			
+			if args.order_type == "Shopping Cart" or args.mute_email:
+				pr.flags.mute_email = True
+	
+			if args.submit_doc:
+				pr.insert(ignore_permissions=True)
+				pr.submit()
+			print "\n ::::1111111pr:::::::::::",pr.name
+			
+		pr.set_as_paid()
+		
+				
+		if args.return_doc:
+			return pr
+	 	
+	 	return pr.as_dict()
+	
+# @frappe.whitelist(allow_guest=True)
+# def make_payment_request222(**args):
+# 	"""Make payment request"""
+# 	
+# 	print "\n ::::::::::::call make_payment_request222:::::::"
+# 	
+# 	args = frappe._dict(args)
+# 	print "\n ::::::::::::MY ARGS:::::::",args
+# 	so_id = args.get('dn')
+# 	print "\n ::::::::::::so_id:::::::",so_id
+# 	
+# 	so_req = frappe.get_doc('Sales Order',so_id)
+# 	print "\n so_req::::::::::",so_req.name
+# 	print "\n so_req::::::::::",so_req.currency
+# 	print "\n so_req::::::::::",so_req.grand_total
+# 	
+# 	
+# 		
+# 	
+# 	ref_doc = frappe.get_doc(args.dt, args.dn)
+#  	print "\n ::::::::::::ref_doc:::::::",ref_doc
+# # 	
+# 	grand_total = get_amount(ref_doc, args.dt)
+#  	print "\n ::::::::::::grand_total:::::::",grand_total
+# # 	
+# 	gateway_account = get_gateway_details(args) or frappe._dict()
+#  	print "\n ::::::::::::gateway_account:::::::",gateway_account
+# # 
+# 	existing_payment_request = frappe.db.get_value("Payment Request",
+# 		{"reference_doctype": args.dt, "reference_name": args.dn, "docstatus": ["!=", 2]})
+#  	print "\n ::::::::::::::::existing_payment_request::::::::",existing_payment_request
+# 
+# 	"""Make payment multisafepay request"""
+# 	#time_date = time.strftime('%Y%m%d%H%M%S')
+# 	print 'Mulltisaflepay>>>>>>>>>..///////'
+# 	api_key = 'b163bc019f751008acedeacf3a3c612c2d41ce05'
+# 	multisafe_url = 'https://testapi.multisafepay.com/v1/json/orders?api_key=%s' %(api_key)
+# 	print "\n \n type :::::::::::::", type(grand_total)
+# 	vals = 	{ 
+# 		 "type": "redirect",
+# 		 "order_id": str(so_req.name),
+# 		 "currency": str(so_req.currency),
+# 		 "amount": int(grand_total),
+# 		 "description": "This is a test",
+# 	
+# 	} 
+# 	print "\n :;:::URL:::",multisafe_url
+# 	res = requests.post(multisafe_url, vals)
+# 	response = res.json()
+# 	print 'ressssss>>>>>>>>>xxxx>>>>>>>>>>', response
+# 	
+# 	frappe.local.response["type"] = "redirect"
+# 	frappe.local.response["location"] = response['data']['payment_url']
+# 	
+# 	print "\n ::::::End of the statement::::::::::"
+# 	
+# 	
+# 	if existing_payment_request:
+# 		pr = frappe.get_doc("Payment Request", existing_payment_request)
+# 		print "\n :::::::::::pr::::::",pr
+# 
+# 	else:
+# 		pr = frappe.new_doc("Payment Request")
+# 		pr.update({
+# 			"payment_gateway_account": gateway_account.get("name"),
+# 			"payment_gateway": gateway_account.get("payment_gateway"),
+# 			"payment_account": gateway_account.get("payment_account"),
+# 			"currency": ref_doc.currency,
+# 			"grand_total": grand_total,
+# 			"email_to": args.recipient_id or "",
+# 			"subject": _("Payment Request for {0}").format(args.dn),
+# 			"message": gateway_account.get("message") or get_dummy_message(ref_doc),
+# 			"reference_doctype": args.dt,
+# 			"reference_name": args.dn
+# 		})
+# 		
+# 		print "\n ::::1111111pr:::::::::::",pr.name, args.order_type
+# 		
+# 		if args.order_type == "Shopping Cart" or args.mute_email:
+# 			pr.flags.mute_email = True
+# 
+# 		if args.submit_doc:
+# 			pr.insert(ignore_permissions=True)
+# 			pr.submit()
+# 		print "\n ::::1111111pr:::::::::::",pr.name
+# 		
+# 	pr.set_as_paid()
+# 	
+# 	
+# 	
+# 	if args.return_doc:
+# 		return pr
+#  	
+#  	return pr.as_dict()
 
 def get_amount(ref_doc, dt):
 	"""get amount based on doctype"""
@@ -316,6 +534,7 @@ def get_gateway_details(args):
 	return gateway_account
 
 def get_payment_gateway_account(args):
+	print "\n args ::::::::get_payment_gateway_account::::::::::", args
 	return frappe.db.get_value("Payment Gateway Account", args,
 		["name", "payment_gateway", "payment_account", "message"],
 			as_dict=1)

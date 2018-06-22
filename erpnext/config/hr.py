@@ -178,6 +178,11 @@ def get_data():
 					"name": "team-updates",
 					"label": _("Team Updates")
 				},
+				{
+					"type": "page",
+					"name": "emp_org_chart",
+					"label": _("Employee Organisation Chart")
+				},
 			]
 		},
 		{
@@ -406,6 +411,14 @@ def get_data():
 					"is_query_report": True,
 					"name": "Department Analytics",
 					"doctype": "Employee"
+				},
+				{
+					"type": "doctype",
+					"name": "Account",
+					"icon": "fa fa-sitemap",
+					"label": _("Employee Organization Chart"),
+					"route": "Tree/Account",
+					"description": _("Tree of employee organization chart."),
 				},
 			]
 		}
