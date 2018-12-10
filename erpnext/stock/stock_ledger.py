@@ -100,7 +100,7 @@ class update_entries_after(object):
 
 		self.company = frappe.db.get_value("Warehouse", self.warehouse, "company")
 		self.precision = get_field_precision(frappe.get_meta("Stock Ledger Entry").get_field("stock_value"),
-			currency=frappe.db.get_value("Company", self.company, "default_currency", cache=True))
+			currency=frappe.get_cached_value('Company',  self.company,  "default_currency"))
 
 		self.prev_stock_value = self.previous_sle.stock_value or 0.0
 		self.stock_queue = json.loads(self.previous_sle.stock_queue or "[]")
@@ -178,7 +178,11 @@ class update_entries_after(object):
 		# rounding as per precision
 		self.stock_value = flt(self.stock_value, self.precision)
 
-		stock_value_difference = self.stock_value - self.prev_stock_value
+		if self.prev_stock_value < 0 and self.stock_value >= 0 and sle.voucher_type != 'Stock Reconciliation':
+			stock_value_difference = sle.actual_qty * self.valuation_rate
+		else:
+			stock_value_difference = self.stock_value - self.prev_stock_value
+
 		self.prev_stock_value = self.stock_value
 
 		# update current sle

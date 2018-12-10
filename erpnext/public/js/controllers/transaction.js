@@ -33,6 +33,7 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 				item.margin_rate_or_amount = 0;
 				item.rate_with_margin = 0;
 			}
+			item.base_rate_with_margin = item.rate_with_margin * flt(frm.doc.conversion_rate);
 
 			cur_frm.cscript.set_gross_profit(item);
 			cur_frm.cscript.calculate_taxes_and_totals();
@@ -96,6 +97,15 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 			}
 
 			frm.cscript.calculate_taxes_and_totals();
+		});
+
+		frappe.ui.form.on(this.frm.doctype + " Item", {
+			items_add: function(frm, cdt, cdn) {
+				var item = frappe.get_doc(cdt, cdn);
+				if(!item.warehouse && frm.doc.set_warehouse) {
+					item.warehouse = frm.doc.set_warehouse;
+				}
+			}
 		});
 
 		var me = this;
@@ -175,6 +185,12 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 		}
 	},
 
+	is_return: function() {
+		if(!this.frm.doc.is_return && this.frm.doc.return_against) {
+			this.frm.set_value('return_against', '');
+		}
+	},
+
 	setup_quality_inspection: function() {
 		if(!in_list(["Delivery Note", "Sales Invoice", "Purchase Receipt", "Purchase Invoice"], this.frm.doc.doctype)) {
 			return;
@@ -210,6 +226,30 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 		});
 	},
 
+	make_payment_request: function() {
+		var me = this;
+		const payment_request_type = (in_list(['Sales Order', 'Sales Invoice'], this.frm.doc.doctype))
+			? "Inward" : "Outward";
+
+		frappe.call({
+			method:"erpnext.accounts.doctype.payment_request.payment_request.make_payment_request",
+			args: {
+				dt: me.frm.doc.doctype,
+				dn: me.frm.doc.name,
+				recipient_id: me.frm.doc.contact_email,
+				payment_request_type: payment_request_type,
+				party_type: payment_request_type == 'Outward' ? "Supplier" : "Customer",
+				party: payment_request_type == 'Outward' ? me.frm.doc.supplier : me.frm.doc.customer
+			},
+			callback: function(r) {
+				if(!r.exc){
+					var doc = frappe.model.sync(r.message);
+					frappe.set_route("Form", r.message.doctype, r.message.name);
+				}
+			}
+		})
+	},
+
 	onload_post_render: function() {
 		if(this.frm.doc.__islocal && !(this.frm.doc.taxes || []).length
 			&& !(this.frm.doc.__onload ? this.frm.doc.__onload.load_after_mapping : false)) {
@@ -229,6 +269,62 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 		this.set_dynamic_labels();
 		this.setup_sms();
 		this.setup_quality_inspection();
+		this.frm.fields_dict["scan_barcode"] && this.frm.fields_dict["scan_barcode"].set_value("");
+		this.frm.fields_dict["scan_barcode"] && this.frm.fields_dict["scan_barcode"].set_new_description("");
+	},
+
+	scan_barcode: function() {
+		let scan_barcode_field = this.frm.fields_dict["scan_barcode"];
+
+		let show_description = function(idx, item_code, exist=null) {
+			if(exist) {
+				scan_barcode_field.set_new_description(__('Row : ') + idx + ' ' +
+					item_code + __(' Qty increased by 1'));
+			} else {
+				scan_barcode_field.set_new_description(__('New row : ') + idx + ' ' +
+					item_code + __('  Created'));
+			}
+		}
+
+		if(this.frm.doc.scan_barcode) {
+			frappe.call({
+				method: "erpnext.selling.page.point_of_sale.point_of_sale.search_serial_or_batch_or_barcode_number",
+				args: { search_value: this.frm.doc.scan_barcode }
+			}).then(r => {
+
+				if(r && r.message && r.message.item_code) {
+					let child = "";
+					let add_row_index = -1;
+					let cur_grid= this.frm.fields_dict["items"].grid;
+
+					this.frm.doc.items.map(d => {
+						if(d.item_code==r.message.item_code){
+							add_row_index = d.idx;
+							return;
+						} else if(!d.item_code && add_row_index==-1) {
+							add_row_index = d.idx;
+						}
+					});
+
+					if(add_row_index == -1) {
+						child = frappe.model.add_child(this.frm.doc, cur_grid.doctype, "items", add_row_index);
+					} else {
+						child = cur_grid.get_grid_row(add_row_index-1).doc;
+					}
+					show_description(child.idx, r.message.item_code, child.item_code);
+
+					frappe.model.set_value(child.doctype, child.name, {
+						"item_code": r.message.item_code,
+						"qty": (child.qty || 0) + 1
+					});
+				}
+				else{
+					scan_barcode_field.set_new_description(this.frm.doc.scan_barcode +__(' does not exist!'));
+				}
+			});
+			scan_barcode_field.set_value("");
+		}
+		return false;
 	},
 
 	apply_default_taxes: function() {
@@ -262,6 +358,7 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 									me.frm.set_value("taxes", r.message.taxes);
 								}
 							},
+							() => me.set_dynamic_labels(),
 							() => me.calculate_taxes_and_totals()
 						]);
 					}
@@ -342,7 +439,9 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 							conversion_factor: item.conversion_factor,
 							weight_per_unit: item.weight_per_unit,
 							weight_uom: item.weight_uom,
-							pos_profile: me.frm.doc.doctype == 'Sales Invoice' ? me.frm.doc.pos_profile : ''
+							uom : item.uom,
+							pos_profile: me.frm.doc.doctype == 'Sales Invoice' ? me.frm.doc.pos_profile : '',
+							cost_center: item.cost_center
 						}
 					},
 
@@ -770,6 +869,38 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 		this.apply_pricing_rule(frappe.get_doc(cdt, cdn), true);
 	},
 
+	service_stop_date: function(frm, cdt, cdn) {
+		var child = locals[cdt][cdn];
+
+		if(child.service_stop_date) {
+			let start_date = Date.parse(child.service_start_date);
+			let end_date = Date.parse(child.service_end_date);
+			let stop_date = Date.parse(child.service_stop_date);
+
+			if(stop_date < start_date) {
+				frappe.model.set_value(cdt, cdn, "service_stop_date", "");
+				frappe.throw(__("Service Stop Date cannot be before Service Start Date"));
+			} else if (stop_date > end_date) {
+				frappe.model.set_value(cdt, cdn, "service_stop_date", "");
+				frappe.throw(__("Service Stop Date cannot be after Service End Date"));
+			}
+		}
+	},
+
+	service_start_date: function(frm, cdt, cdn) {
+		var child = locals[cdt][cdn];
+
+		if(child.service_start_date) {
+			frappe.call({
+				"method": "erpnext.stock.get_item_details.calculate_service_end_date",
+				args: {"args": child},
+				callback: function(r) {
+					frappe.model.set_value(cdt, cdn, "service_end_date", r.message.service_end_date);
+				}
+			})
+		}
+	},
+
 	calculate_net_weight: function(){
 		/* Calculate Total Net Weight then further applied shipping rule to calculate shipping charges.*/
 		var me = this;
@@ -787,16 +918,10 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 		this.frm.toggle_reqd("plc_conversion_rate",
 			!!(this.frm.doc.price_list_name && this.frm.doc.price_list_currency));
 
-		if(this.frm.doc_currency!==this.frm.doc.currency
-			|| this.frm.doc_currency!==this.frm.doc.price_list_currency) {
-			// reset names only when the currency is different
-
-			var company_currency = this.get_company_currency();
-			this.change_form_labels(company_currency);
-			this.change_grid_labels(company_currency);
-			this.frm.refresh_fields();
-			this.frm.doc_currency = this.frm.doc.currency;
-		}
+		var company_currency = this.get_company_currency();
+		this.change_form_labels(company_currency);
+		this.change_grid_labels(company_currency);
+		this.frm.refresh_fields();
 	},
 
 	change_form_labels: function(company_currency) {
@@ -1016,6 +1141,7 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 					"item_group": d.item_group,
 					"brand": d.brand,
 					"qty": d.qty,
+					"uom": d.uom,
 					"parenttype": d.parenttype,
 					"parent": d.parent,
 					"pricing_rule": d.pricing_rule,
@@ -1367,6 +1493,15 @@ erpnext.TransactionController = erpnext.taxes_and_totals.extend({
 					}
 				}
 			})
+		}
+	},
+
+	set_warehouse: function() {
+		var me = this;
+		if(this.frm.doc.set_warehouse) {
+			$.each(this.frm.doc.items || [], function(i, item) {
+				frappe.model.set_value(me.frm.doctype + " Item", item.name, "warehouse", me.frm.doc.set_warehouse);
+			});
 		}
 	}
 });

@@ -103,12 +103,32 @@ $.extend(erpnext, {
 $.extend(erpnext.utils, {
 	set_party_dashboard_indicators: function(frm) {
 		if(frm.doc.__onload && frm.doc.__onload.dashboard_info) {
-			var info = frm.doc.__onload.dashboard_info;
-			frm.dashboard.add_indicator(__('Annual Billing: {0}',
-				[format_currency(info.billing_this_year, info.currency)]), 'blue');
-			frm.dashboard.add_indicator(__('Total Unpaid: {0}',
-				[format_currency(info.total_unpaid, info.currency)]),
-				info.total_unpaid ? 'orange' : 'green');
+			var company_wise_info = frm.doc.__onload.dashboard_info;
+			if(company_wise_info.length > 1) {
+				frm.dashboard.stats_area.removeClass('hidden');
+				frm.dashboard.stats_area_row.addClass('flex');
+				frm.dashboard.stats_area_row.css('flex-wrap', 'wrap');
+				company_wise_info.forEach(function(info) {
+					frm.dashboard.stats_area_row.append(
+						'<div class="flex-column col-xs-6">'+
+							'<div style="margin-bottom:20px"><h6>'+info.company+'</h6></div>'+
+							'<div class="badge-link small" style="margin-bottom:10px">Annual Billing: '
+							+format_currency(info.billing_this_year, info.currency)+'</div>'+
+							'<div class="badge-link small" style="margin-bottom:20px">Total Unpaid: '
+							+format_currency(info.total_unpaid, info.currency)+'</div>'+
+						'</div>'
+					);
+				});
+			}
+			else {
+				frm.dashboard.stats_area.removeClass('hidden');
+				frm.dashboard.stats_area_row.append(
+					'</div><div class="col-xs-6 small" style="margin-bottom:10px">Annual Billing: <b>'
+					+format_currency(company_wise_info[0].billing_this_year, company_wise_info[0].currency)+'</b></div>' +
+					'<div class="col-xs-6 small" style="margin-bottom:10px">Total Unpaid: <b>'
+					+format_currency(company_wise_info[0].billing_this_year, company_wise_info[0].currency)+'</b></div>'
+				);
+			}
 		}
 	},
 
@@ -118,7 +138,7 @@ $.extend(erpnext.utils, {
 		return dict[party_type];
 	},
 
-	copy_value_in_all_row: function(doc, dt, dn, table_fieldname, fieldname) {
+	copy_value_in_all_rows: function(doc, dt, dn, table_fieldname, fieldname) {
 		var d = locals[dt][dn];
 		if(d[fieldname]){
 			var cl = doc[table_fieldname] || [];
@@ -144,9 +164,38 @@ $.extend(erpnext.utils, {
 		}
 	},
 
+	make_bank_account: function(doctype, docname) {
+		frappe.call({
+			method: "erpnext.accounts.doctype.bank_account.bank_account.make_bank_account",
+			args: {
+				doctype: doctype,
+				docname: docname
+			},
+			freeze: true,
+			callback: function(r) {
+				var doclist = frappe.model.sync(r.message);
+				frappe.set_route("Form", doclist[0].doctype, doclist[0].name);
+			}
+		})
+	},
+
 	make_subscription: function(doctype, docname) {
 		frappe.call({
 			method: "frappe.desk.doctype.auto_repeat.auto_repeat.make_auto_repeat",
+			args: {
+				doctype: doctype,
+				docname: docname
+			},
+			callback: function(r) {
+				var doclist = frappe.model.sync(r.message);
+				frappe.set_route("Form", doclist[0].doctype, doclist[0].name);
+			}
+		})
+	},
+
+	make_pricing_rule: function(doctype, docname) {
+		frappe.call({
+			method: "erpnext.accounts.doctype.pricing_rule.pricing_rule.make_pricing_rule",
 			args: {
 				doctype: doctype,
 				docname: docname
@@ -201,7 +250,18 @@ $.extend(erpnext.utils, {
 		} else {
 			return options[0];
 		}
-	}
+	},
+	copy_parent_value_in_all_row: function(doc, dt, dn, table_fieldname, fieldname, parent_fieldname) {
+		var d = locals[dt][dn];
+		if(d[fieldname]){
+			var cl = doc[table_fieldname] || [];
+			for(var i = 0; i < cl.length; i++) {
+				cl[i][fieldname] = doc[parent_fieldname];
+			}
+		}
+		refresh_field(table_fieldname);
+	},
+
 });
 
 erpnext.utils.select_alternate_items = function(opts) {
@@ -487,6 +547,7 @@ erpnext.utils.map_current_doc = function(opts) {
 				"method": opts.method,
 				"source_names": opts.source_name,
 				"target_doc": cur_frm.doc,
+				'args': opts.args
 			},
 			callback: function(r) {
 				if(!r.exc) {

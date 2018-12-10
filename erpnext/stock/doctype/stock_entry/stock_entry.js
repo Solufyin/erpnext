@@ -199,12 +199,15 @@ frappe.ui.form.on('Stock Entry', {
 	},
 
 	validate_purpose_consumption: function(frm) {
-		frappe.model.get_value('Manufacturing Settings', {'name': 'Manufacturing Settings'}, 'material_consumption', function(d) {
-			if (d.material_consumption==0 && frm.doc.purpose=="Material Consumption for Manufacture") {
+		frappe.call({
+			method: "erpnext.manufacturing.doctype.manufacturing_settings.manufacturing_settings.is_material_consumption_enabled",
+		}).then(r => {
+			if (cint(r.message) == 0
+				&& frm.doc.purpose=="Material Consumption for Manufacture") {
 				frm.set_value("purpose", 'Manufacture');
 				frappe.throw(__('Material Consumption is not set in Manufacturing Settings.'));
 			}
-		})
+		});
 	},
 
 	company: function(frm) {
@@ -472,10 +475,10 @@ frappe.ui.form.on('Stock Entry Detail', {
 		}
 	},
 	expense_account: function(frm, cdt, cdn) {
-		erpnext.utils.copy_value_in_all_row(frm.doc, cdt, cdn, "items", "expense_account");
+		erpnext.utils.copy_value_in_all_rows(frm.doc, cdt, cdn, "items", "expense_account");
 	},
 	cost_center: function(frm, cdt, cdn) {
-		erpnext.utils.copy_value_in_all_row(frm.doc, cdt, cdn, "items", "cost_center");
+		erpnext.utils.copy_value_in_all_rows(frm.doc, cdt, cdn, "items", "cost_center");
 	},
 	sample_quantity: function(frm, cdt, cdn) {
 		validate_sample_quantity(frm, cdt, cdn);
@@ -594,6 +597,11 @@ erpnext.stock.StockEntry = erpnext.stock.StockController.extend({
 		erpnext.utils.add_item(this.frm);
 	},
 
+	scan_barcode: function() {
+		let transaction_controller= new erpnext.TransactionController({frm:this.frm});
+		transaction_controller.scan_barcode();
+	},
+
 	on_submit: function() {
 		this.clean_up();
 	},
@@ -654,7 +662,7 @@ erpnext.stock.StockEntry = erpnext.stock.StockController.extend({
 	work_order: function() {
 		var me = this;
 		this.toggle_enable_bom();
-		if(!me.frm.doc.work_order) {
+		if(!me.frm.doc.work_order || me.frm.doc.job_card) {
 			return;
 		}
 

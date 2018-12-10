@@ -57,6 +57,8 @@ class AccountsController(TransactionBase):
 						_('{0} is blocked so this transaction cannot proceed'.format(supplier_name)), raise_exception=1)
 
 	def validate(self):
+
+		self.validate_qty_is_not_zero()
 		if self.get("_action") and self._action != "update_after_submit":
 			self.set_missing_values(for_validate=True)
 
@@ -85,8 +87,12 @@ class AccountsController(TransactionBase):
 		if self.doctype == 'Purchase Invoice':
 			self.validate_paid_amount()
 
-		if self.doctype in ['Purchase Invoice', 'Sales Invoice'] and self.is_return:
-			self.validate_qty()
+		if self.doctype in ['Purchase Invoice', 'Sales Invoice']:
+			if cint(self.allocate_advances_automatically):
+				self.set_advances()
+
+			if self.is_return:
+				self.validate_qty()
 
 	def validate_invoice_documents_schedule(self):
 		self.validate_payment_schedule_dates()
@@ -112,6 +118,13 @@ class AccountsController(TransactionBase):
 							'Supplier Quotation', 'Purchase Receipt', 'Delivery Note', 'Quotation']:
 			if self.get("group_same_items"):
 				self.group_similar_items()
+
+			df = self.meta.get_field("discount_amount")
+			if self.get("discount_amount") and hasattr(self, "taxes") and not len(self.taxes):
+				df.set("print_hide", 0)
+				self.discount_amount = -self.discount_amount
+			else:
+				df.set("print_hide", 1)
 
 	def validate_paid_amount(self):
 		if hasattr(self, "is_pos") or hasattr(self, "is_paid"):
@@ -168,7 +181,7 @@ class AccountsController(TransactionBase):
 			validate_due_date(self.posting_date, self.due_date,
 				"Customer", self.customer, self.company, self.payment_terms_template)
 		elif self.doctype == "Purchase Invoice":
-			validate_due_date(self.posting_date, self.due_date,
+			validate_due_date(self.bill_date or self.posting_date, self.due_date,
 				"Supplier", self.supplier, self.company, self.bill_date, self.payment_terms_template)
 
 	def set_price_list_currency(self, buying_or_selling):
@@ -348,6 +361,11 @@ class AccountsController(TransactionBase):
 
 		return gl_dict
 
+	def validate_qty_is_not_zero(self):
+		for item in self.items:
+			if not item.qty:
+				frappe.throw("Item quantity can not be zero")
+
 	def validate_account_currency(self, account, account_currency=None):
 		valid_currency = [self.company_currency]
 		if self.get("currency") and self.currency != self.company_currency:
@@ -362,23 +380,6 @@ class AccountsController(TransactionBase):
 
 		frappe.db.sql("""delete from `tab%s` where parentfield=%s and parent = %s
 			and allocated_amount = 0""" % (childtype, '%s', '%s'), (parentfield, self.name))
-
-	def set_advances(self):
-		"""Returns list of advances against Account, Party, Reference"""
-
-		res = self.get_advance_entries()
-
-		self.set("advances", [])
-		for d in res:
-			self.append("advances", {
-				"doctype": self.doctype + " Advance",
-				"reference_type": d.reference_type,
-				"reference_name": d.reference_name,
-				"reference_row": d.reference_row,
-				"remarks": d.remarks,
-				"advance_amount": flt(d.amount),
-				"allocated_amount": flt(d.amount) if d.against_order else 0
-			})
 
 	def apply_shipping_rule(self):
 		if self.shipping_rule:
@@ -399,6 +400,31 @@ class AccountsController(TransactionBase):
 					return frappe.get_doc('Address', self.get(fieldname))
 
 		return {}
+
+	def set_advances(self):
+		"""Returns list of advances against Account, Party, Reference"""
+
+		res = self.get_advance_entries()
+
+		self.set("advances", [])
+		advance_allocated = 0
+		for d in res:
+			if d.against_order:
+				allocated_amount = flt(d.amount)
+			else:
+				amount = self.rounded_total or self.grand_total
+				allocated_amount = min(amount - advance_allocated, d.amount)
+			advance_allocated += flt(allocated_amount)
+
+			self.append("advances", {
+				"doctype": self.doctype + " Advance",
+				"reference_type": d.reference_type,
+				"reference_name": d.reference_name,
+				"reference_row": d.reference_row,
+				"remarks": d.remarks,
+				"advance_amount": flt(d.amount),
+				"allocated_amount": allocated_amount
+			})
 
 	def get_advance_entries(self, include_unallocated=True):
 		if self.doctype == "Sales Invoice":
@@ -595,7 +621,7 @@ class AccountsController(TransactionBase):
 	@property
 	def company_abbr(self):
 		if not hasattr(self, "_abbr"):
-			self._abbr = frappe.db.get_value("Company", self.company, "abbr")
+			self._abbr = frappe.db.get_value('Company',  self.company,  "abbr")
 
 		return self._abbr
 
@@ -697,22 +723,24 @@ class AccountsController(TransactionBase):
 	def group_similar_items(self):
 		group_item_qty = {}
 		group_item_amount = {}
+		# to update serial number in print
+		count = 0
 
 		for item in self.items:
 			group_item_qty[item.item_code] = group_item_qty.get(item.item_code, 0) + item.qty
 			group_item_amount[item.item_code] = group_item_amount.get(item.item_code, 0) + item.amount
 
 		duplicate_list = []
-
 		for item in self.items:
 			if item.item_code in group_item_qty:
+				count += 1
 				item.qty = group_item_qty[item.item_code]
 				item.amount = group_item_amount[item.item_code]
 				item.rate = flt(flt(item.amount) / flt(item.qty), item.precision("rate"))
+				item.idx = count
 				del group_item_qty[item.item_code]
 			else:
 				duplicate_list.append(item)
-
 		for item in duplicate_list:
 			self.remove(item)
 
@@ -761,8 +789,7 @@ class AccountsController(TransactionBase):
 
 		if li:
 			duplicates = '<br>' + '<br>'.join(li)
-			frappe.throw(_("Rows with duplicate due dates in other rows were found: {list}")
-						 .format(list=duplicates))
+			frappe.throw(_("Rows with duplicate due dates in other rows were found: {0}").format(duplicates))
 
 	def validate_payment_schedule_amount(self):
 		if self.doctype == 'Sales Invoice' and self.is_pos: return
@@ -830,7 +857,7 @@ def get_taxes_and_charges(master_doctype, master_name):
 def validate_conversion_rate(currency, conversion_rate, conversion_rate_label, company):
 	"""common validation for currency and price list currency"""
 
-	company_currency = frappe.db.get_value("Company", company, "default_currency", cache=True)
+	company_currency = frappe.get_cached_value('Company',  company,  "default_currency")
 
 	if not conversion_rate:
 		throw(_("{0} is mandatory. Maybe Currency Exchange record is not created for {1} to {2}.").format(

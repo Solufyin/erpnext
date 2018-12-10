@@ -4,6 +4,10 @@
 		"node": true,
 		"es6": true
 	},
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module"
+	},
 	"extends": "eslint:recommended",
 	"rules": {
 		"indent": [
@@ -50,10 +54,9 @@
 	"root": true,
 	"globals": {
 		"frappe": true,
+		"Vue": true,
 		"erpnext": true,
-		"schools": true,
-		"education": true,
-
+		"hub": true,
 		"$": true,
 		"jQuery": true,
 		"moment": true,

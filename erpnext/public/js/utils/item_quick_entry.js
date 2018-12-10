@@ -73,7 +73,7 @@ frappe.ui.form.ItemQuickEntryForm = frappe.ui.form.QuickEntryForm.extend({
 						if (me.after_insert) {
 							me.after_insert(me.dialog.doc);
 						} else {
-							me.open_from_if_not_list();
+							me.open_form_if_not_list();
 						}
 					}
 				},
@@ -320,7 +320,7 @@ frappe.ui.form.ItemQuickEntryForm = frappe.ui.form.QuickEntryForm.extend({
 						["attribute_value", "like", e.target.value + "%"]
 					],
 					fields: ["attribute_value"],
-					parent: "Item"
+					parent: "Item Attribute"
 				},
 				callback: function(r) {
 					if (r.message) {

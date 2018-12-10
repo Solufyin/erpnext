@@ -12,7 +12,7 @@ from erpnext.setup.utils import get_exchange_rate
 from erpnext.stock.get_item_details import get_pos_profile
 from frappe import _
 from frappe.core.doctype.communication.email import make
-from frappe.utils import nowdate
+from frappe.utils import nowdate, cint
 
 from six import string_types, iteritems
 
@@ -165,9 +165,12 @@ def get_items_list(pos_profile, company):
 		select
 			i.name, i.item_code, i.item_name, i.description, i.item_group, i.has_batch_no,
 			i.has_serial_no, i.is_stock_item, i.brand, i.stock_uom, i.image,
-			id.expense_account, id.selling_cost_center, id.default_warehouse
+			id.expense_account, id.selling_cost_center, id.default_warehouse,
+			i.sales_uom, c.conversion_factor
 		from
-			`tabItem` i LEFT JOIN `tabItem Default` id ON id.parent = i.name and id.company = %s
+			`tabItem` i
+		left join `tabItem Default` id on id.parent = i.name and id.company = %s
+		left join `tabUOM Conversion Detail` c on i.name = c.parent and i.sales_uom = c.uom
 		where
 			i.disabled = 0 and i.has_variants = 0 and i.is_sales_item = 1
 			{cond}
@@ -495,7 +498,7 @@ def make_address(args, customer):
 		address = frappe.get_doc('Address', name)
 	else:
 		address = frappe.new_doc('Address')
-		address.country = frappe.db.get_value('Company', args.get('company'), 'country')
+		address.country = frappe.get_cached_value('Company',  args.get('company'),  'country')
 		address.append('links', {
 			'link_doctype': 'Customer',
 			'link_name': customer
@@ -514,7 +517,7 @@ def make_email_queue(email_queue):
 		name = frappe.db.get_value('Sales Invoice', {'offline_pos_name': key}, 'name')
 		data = json.loads(data)
 		sender = frappe.session.user
-		print_format = "POS Invoice"
+		print_format = "POS Invoice" if not cint(frappe.db.get_value('Print Format', 'POS Invoice', 'disabled')) else None
 		attachments = [frappe.attach_print('Sales Invoice', name, print_format=print_format)]
 
 		make(subject=data.get('subject'), content=data.get('content'), recipients=data.get('recipients'),
@@ -534,6 +537,7 @@ def validate_item(doc):
 			item_doc.item_name = item.get('item_name')
 			item_doc.description = item.get('description')
 			item_doc.stock_uom = item.get('stock_uom')
+			item_doc.uom = item.get('uom')
 			item_doc.item_group = item.get('item_group')
 			item_doc.append('item_defaults', {
 				"company": doc.get("company"),
@@ -572,7 +576,7 @@ def save_invoice(doc, name, name_list):
 			frappe.db.commit()
 			name_list.append(name)
 	except Exception:
-		frappe.log_error(frappe.get_traceback())
 		frappe.db.rollback()
+		frappe.log_error(frappe.get_traceback())
 
 	return name_list

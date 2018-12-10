@@ -57,10 +57,65 @@ frappe.query_reports["General Ledger"] = {
 			}
 		},
 		{
+			"fieldname":"cost_center",
+			"label": __("Cost Center"),
+			"fieldtype": "MultiSelect",
+			get_data: function() {
+				var cost_centers = frappe.query_report.get_filter_value("cost_center") || "";
+
+				const values = cost_centers.split(/\s*,\s*/).filter(d => d);
+				const txt = cost_centers.match(/[^,\s*]*$/)[0] || '';
+				let data = [];
+
+				frappe.call({
+					type: "GET",
+					method:'frappe.desk.search.search_link',
+					async: false,
+					no_spinner: true,
+					args: {
+						doctype: "Cost Center",
+						txt: txt,
+						filters: {
+							"company": frappe.query_report.get_filter_value("company"),
+							"name": ["not in", values]
+						}
+					},
+					callback: function(r) {
+						data = r.results;
+					}
+				});
+				return data;
+			}
+		},
+		{
 			"fieldname":"project",
 			"label": __("Project"),
-			"fieldtype": "Link",
-			"options": "Project"
+			"fieldtype": "MultiSelect",
+			get_data: function() {
+				var projects = frappe.query_report.get_filter_value("project") || "";
+
+				const values = projects.split(/\s*,\s*/).filter(d => d);
+				const txt = projects.match(/[^,\s*]*$/)[0] || '';
+				let data = [];
+
+				frappe.call({
+					type: "GET",
+					method:'frappe.desk.search.search_link',
+					async: false,
+					no_spinner: true,
+					args: {
+						doctype: "Project",
+						txt: txt,
+						filters: {
+							"name": ["not in", values]
+						}
+					},
+					callback: function(r) {
+						data = r.results;
+					}
+				});
+				return data;
+			}
 		},
 		{
 			"fieldtype": "Break",
@@ -141,8 +196,9 @@ frappe.query_reports["General Ledger"] = {
 			"fieldname":"group_by",
 			"label": __("Group by"),
 			"fieldtype": "Select",
-			"options": ["", "Group by Voucher", "Group by Account", "Group by Party"],
-			"default": "Group by Voucher"
+			"options": ["", __("Group by Voucher"), __("Group by Voucher (Consolidated)"),
+				__("Group by Account"), __("Group by Party")],
+			"default": __("Group by Voucher (Consolidated)")
 		},
 		{
 			"fieldname":"tax_id",
